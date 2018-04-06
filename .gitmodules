@@ -1,0 +1,12 @@
+[submodule "quotek-core"]
+	path = quotek-core
+	url = https://github.com/quotekio/quotek-core
+[submodule "quotek-sdk"]
+	path = quotek-sdk
+	url = https://github.com/quotekio/quotek-sdk
+[submodule "quotek-ig"]
+	path = quotek-ig
+	url = https://github.com/quotekio/quotek-ig
+[submodule "quotek-admin"]
+	path = quotek-admin
+	url = https://github.com/quotekio/quotek-admin
