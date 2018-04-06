@@ -42,7 +42,7 @@ function build_admin() {
   echo "Installing quotek-admin With $1"
   pushd quotek-admin
   ./init.sh $1
-  ./install.sh
+  ./install.sh -i $PREFIX/admin
   popd
 }
 
