@@ -127,6 +127,7 @@ function build_finish() {
 
   touch /var/log/qate.log
   chown -R www-data /tmp/qate
+  chown -R www-data $PREFIX
   chown www-data /var/log/qate.log
   echo "$PREFIX/lib" >> /etc/ld.so.conf.d/qate.conf
   chmod +x /etc/init.d/quotek
