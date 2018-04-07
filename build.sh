@@ -89,7 +89,7 @@ function init() {
   git submodule update --init --recursive
 
   apt-get -y update
-  apt-get -y install build-essential g++ cmake libasio-dev libcurl4-openssl-dev
+  apt-get -y install build-essential g++ cmake libasio-dev libcurl4-openssl-dev libeigen3-dev
 
   if [ ! -d /usr/include/rapidjson ] ;then
      git clone https://github.com/quotekio/rapidjson
@@ -112,7 +112,7 @@ function init() {
   fi
 
   # Creates symlink to make quotek SDK compile correctly
-  ln -s `pwd`/sdk/src/eigen3/Eigen /usr/include/Eigen
+  ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
   rm -rf websocketpp rapidjson rapidxml
 }
 
