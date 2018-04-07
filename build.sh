@@ -121,13 +121,18 @@ function init() {
 
 # Performs the ultimate post-install tasks for quotek-core and quotek-admin.
 function build_finish() {
+
   if [ ! -d /tmp/qate ] ;then
     mkdir /tmp/qate
   fi
 
+  tar -xvzf coderep.init.tgz -C/
+
   touch /var/log/qate.log
   chown -R www-data /tmp/qate
   chown -R www-data $PREFIX
+  chown -R www-data /quotek
+
   chown www-data /var/log/qate.log
   echo "$PREFIX/lib" >> /etc/ld.so.conf.d/qate.conf
   chmod +x /etc/init.d/quotek
