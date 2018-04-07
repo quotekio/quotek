@@ -74,7 +74,7 @@ function initdb() {
       apt-get -y update
       apt-get -y install postgresql-9.5 libpqxx-dev 
 
-      ./../quptek-core/tools/init_pgsql.sh
+      ./../quotek-core/tools/init_pgsql.sh
 
     ;;
   esac
