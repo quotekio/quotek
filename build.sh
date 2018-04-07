@@ -42,6 +42,9 @@ function build_admin() {
   echo "Installing quotek-admin With $1"
   pushd quotek-admin
   ./init.sh nginx
+  ./composer.phar self-update
+  ./composer.phar update
+  ./composer.phar install
   ./install.sh -y -i $PREFIX/admin
   popd
 }
