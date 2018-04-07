@@ -41,7 +41,7 @@ function build_ig() {
 function build_admin() {
   echo "Installing quotek-admin With $1"
   pushd quotek-admin
-  ./init.sh $1
+  ./init.sh nginx
   ./install.sh -y -i $PREFIX/admin
   popd
 }
