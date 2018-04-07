@@ -27,7 +27,7 @@ function build_core() {
 function build_sdk() {
  pushd quotek-sdk
   cmake . && make -j3 && make install
-  cpopd
+  popd
 }
 
 # Builds the IG Markets REST Connector.
