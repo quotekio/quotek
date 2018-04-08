@@ -34,9 +34,6 @@ cd quotek
 ```
 That's all..The full install process takes from 10 to 30mins depending on the performance of the server.
 
-**Note: Don't forget to note the DB PASSWORD provided at the end of the install, you will need it later !**
-
-
 How to Configure
 -----------------
 
@@ -51,13 +48,6 @@ The first thing to configure is your IG API Account. To do that, go to Configura
 A Modal window should appear. Give the broker config a name (without spaces) then enter the username, password and API key provided by IG, and finally click on "Create".
 
 The second step is to add this newly created broker to you main config. To do that, go back in Configuration, click on the "Default" line, then "Edit". A Modal windows should open, then in the General tab select your previously configured broker in the Brokers Combo Box. Finally click on Modify, you're done.
-
-
-### Backend DB Password
-
-
-Now it's time to set the Backend's DB password. 
-To do that, just go back in configuration, click on the "Default" line then "Edit". Once the modal windows is opened, click on the "Backend" tab, then change the Backend Password to be the one provided at the Install Step. To finish, click on Modify
 
 
 Start the engine
@@ -75,16 +65,5 @@ DISCLAIMER
 ----------
 
 As stated in the project's software license (3-clauses BSD), the software's author can never and in any circumstance, be held responsible for any bug or software defect that would have resulted in any form of damages, including but not restricted to financial losses.
-
-
-
-
-
-
-
-
-
-
-
 
 

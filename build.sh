@@ -146,6 +146,8 @@ function build_finish() {
 
     dbpass=`cat /tmp/quotek_dbpasswd`
 
+    echo "UPDATE corecfg set backend_password='$dbpass';" | sqlite3 /usr/local/quotek/admin/data/quotek.sqlite
+
     echo "********************************************"
     echo "PASSWORD FOR QUOTEK DB: $dbpass"
     echo "********************************************"
