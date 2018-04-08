@@ -72,7 +72,7 @@ function initdb() {
 
     postgres)
       apt-get -y update
-      apt-get -y install postgresql-9.5 libpqxx-dev 
+      apt-get -y install postgresql libpqxx-dev 
 
       ./../quotek-core/tools/init_pgsql.sh
 
