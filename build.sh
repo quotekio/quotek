@@ -71,6 +71,10 @@ function initdb() {
     ;;
 
     postgres)
+
+      export DEBIAN_FRONTEND=noninteractive
+      export DEBCONF_NONINTERACTIVE_SEEN=true
+
       apt-get -y update
       apt-get -y install postgresql libpqxx-dev 
 
