@@ -1,0 +1,487 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Records</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_struct.html">Data Structures</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="record.html">Record</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html">News</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="records">
+<h1>Records<a class="headerlink" href="#records" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek4data7recordsE">
+<span id="quotek::data::records"></span><span class="target" id="quotekclassquotek_1_1data_1_1records"></span><em class="property">class </em><code class="descclassname">quotek::data::</code><code class="descname">records</code><a class="headerlink" href="#_CPPv2N6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>records is a class that is is a <a class="reference internal" href="record.html#quotekclassquotek_1_1data_1_1record"><span>quotek::data::record</span></a> container </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7recordsEv">
+<span id="quotek::data::records::records"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a8cda41f9a67e310f90f2653b391d61c3"></span><code class="descname">records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7recordsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class Constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7recordsERNSt6vectorINSt5tupleIlffEEEE">
+<span id="quotek::data::records::records__std::vector:std::tuple:l.float.float::R"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a2d1ba777fe0d361640c67aa1e011c38f"></span><code class="descname">records</code><span class="sig-paren">(</span>std::vector&lt;std::tuple&lt;long, float, float&gt;&gt; &amp;<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7recordsERNSt6vectorINSt5tupleIlffEEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor 2. Takes a vector of (timestamp,value,spread) tuples to construct a records object. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>vector of (long,float,float) tuples. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7recordsERNSt6vectorIfEE">
+<span id="quotek::data::records::records__std::vector:float:R"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a3dae5017220a281dff4b60e7f89c56c1"></span><code class="descname">records</code><span class="sig-paren">(</span>std::vector&lt;float&gt; &amp;<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7recordsERNSt6vectorIfEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor 3. Takes a vector of float values to construct a records object. With this constructor, spread is systematically left to 0 and timestamp ranges (1..data.size()) <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>vector of float. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7recordsERNSt6vectorIN6quotek4data6recordEEE">
+<span id="quotek::data::records::records__std::vector:quotek::data::record:R"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a30b6922f7a404eb5c7c9efb7ca1432ae"></span><code class="descname">records</code><span class="sig-paren">(</span>std::vector&lt;quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a>&gt; &amp;<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7recordsERNSt6vectorIN6quotek4data6recordEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor 4. Takes a vector of <a class="reference internal" href="record.html#quotekclassquotek_1_1data_1_1record"><span>quotek::data::record</span></a> values to construct a records object. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>vector of <a class="reference internal" href="record.html#quotekclassquotek_1_1data_1_1record"><span>quotek::data::record</span></a>. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7recordsD0Ev">
+<span id="quotek::data::records::~records"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a7e2d5108afff5f901165bee9dbddf4e8"></span><code class="descname">~records</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7recordsD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class Destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7recordsixERKi">
+<span id="quotek::data::records::subscript-operator__iCR"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1afb51d07109ba07a940ce79546c614022"></span>quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a> &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span><em class="property">const</em> int &amp;<em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7recordsixERKi" title="Permalink to this definition">¶</a></dt>
+<dd><p>[] Operator </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6searchEl">
+<span id="quotek::data::records::search__l"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1ac74031f1debb9c731832c214e8ea3d28"></span>int <code class="descname">search</code><span class="sig-paren">(</span>long <em>search_timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6searchEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>search performs a binary search inside a vector of records given a timestamp. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>index of the found record element inside the dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>the record dataset to search in </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">search_timestamp</span></code> - <p>the timestamp to search for inside the dataset. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6sampleEll">
+<span id="quotek::data::records::sample__l.l"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1ab7cc0c7261ac97be77c17d819e2586ee"></span>quotek::data::<a class="reference internal" href="#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">sample</code><span class="sig-paren">(</span>long <em>time_inf</em>, long <em>time_sup</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6sampleEll" title="Permalink to this definition">¶</a></dt>
+<dd><p>sample is a method to extract a subvector of records from a vector of records, given starting and ending timestamps. Note: timestamps can be negative, in which case the real timestamps are time() + time_inf, time() + time_sup. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>resampled dataset containing only the data in time interval [time_inf, time_sup] </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>the record dataset to extract sample from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">time_inf</span></code> - <p>epoch timestamp for first element of sample. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">time_sup</span></code> - <p>epoch timestamp for the last element of sample. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7extractEii">
+<span id="quotek::data::records::extract__i.i"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a4de2dd1c93eb77c21edcec811f4194d1"></span>quotek::data::<a class="reference internal" href="#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">extract</code><span class="sig-paren">(</span>int <em>start_offset</em>, int <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7extractEii" title="Permalink to this definition">¶</a></dt>
+<dd><p>to create a new subvector. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>extraced dataset containing data in interval [start_offsret, start_offset + size] </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>record dataset to extract data from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">start_offset</span></code> - <p>the element index from which to start extract </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">size</span></code> - <p>the size of the extract. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records7extractEi">
+<span id="quotek::data::records::extract__i"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1af449824deff146c9a4df101469625a88"></span>quotek::data::<a class="reference internal" href="#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">extract</code><span class="sig-paren">(</span>int <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records7extractEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alternative extract function, for extraction of the last elements of a <a class="reference internal" href="#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> container. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a <a class="reference internal" href="#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> container containing the n last elements of the object. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">n</span></code> - <p>number of last elements to add in the returned container. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records11down_sampleEifNSt6stringE">
+<span id="quotek::data::records::down_sample__i.float.ss"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a478a7fb95bdc4a4ff05597262338222b"></span>quotek::data::<a class="reference internal" href="#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">down_sample</code><span class="sig-paren">(</span>int <em>period</em>, float <em>tick</em>, std::string <em>method</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records11down_sampleEifNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downsample reduces the amount of points in the dataset by agrregating data in &#8220;period&#8221; intervals. 
+How down sampling methods work:<ul class="simple">
+<li>close: Simply takes the last price over aggregated time period.</li>
+<li>HL2: Takes high and low price over aggregated time period and makes average.</li>
+<li>typical: Takes high, low and close prices over time period and makes average.</li>
+<li>OHLC4: Takes open, high, low and close prices over time period and makes average.</li>
+</ul>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the new, down sampled dataset.</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">period</span></code> - <p>size of the aggregate, in seconds. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">tick</span></code> - <p>tick exprimed in seconds of records dataset.  down sampling method. Method can be either &#8220;close&#8221;, &#8220;HL2&#8221;, &#8220;typical&#8221;, &#8220;OHLC4&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Note about down sampling: spread values are not kept in resulting dataset it would not make any sense to do so. therefore, they&#8217;re all 0 in resulting dataset. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records8get_dataEv">
+<span id="quotek::data::records::get_data"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a8849d78f7adb70afbd58614f5f167109"></span>std::vector&lt;quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a>&gt; &amp;<code class="descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records8get_dataEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a vector of <a class="reference internal" href="record.html#quotekclassquotek_1_1data_1_1record"><span>quotek::data::record</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records17export_timestampsEv">
+<span id="quotek::data::records::export_timestamps"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a1c41741fdb7db7d70f4a9214e3977176"></span>std::vector&lt;long&gt; <code class="descname">export_timestamps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records17export_timestampsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a vector that contains all the timestamps of the dataset. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records13export_valuesEv">
+<span id="quotek::data::records::export_values"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a339761df49d222171512521a15c7183f"></span>std::vector&lt;float&gt; <code class="descname">export_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records13export_valuesEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a vector that contains all the values of the dataset. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records14export_spreadsEv">
+<span id="quotek::data::records::export_spreads"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1aa540fdd3a0700c1d7c3e7b43c17e8d47"></span>std::vector&lt;float&gt; <code class="descname">export_spreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records14export_spreadsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a vector that contains all the spreads of a dataset. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records4lastEv">
+<span id="quotek::data::records::last"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a3041715f4fc1d46513e043c1c98ce15b"></span>quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a> &amp;<code class="descname">last</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records4lastEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>last returns last vector element. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records4sizeEv">
+<span id="quotek::data::records::size"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a12469efba205312ec79976948b6473b7"></span>size_t <code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records4sizeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns size of container. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6appendERN6quotek4data6recordE">
+<span id="quotek::data::records::append__quotek::data::recordR"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a5c09e27407d2b06251e66b8905e07c7d"></span>void <code class="descname">append</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a> &amp;<em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6appendERN6quotek4data6recordE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds new entry to records container (record form) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6appendEf">
+<span id="quotek::data::records::append__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a71f16bbb1c82ad84928838dbbcf2160d"></span>void <code class="descname">append</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6appendEf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds new entry to records container (value only) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6appendElf">
+<span id="quotek::data::records::append__l.float"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1ae908537585faf38f7dde8a6339634b7b"></span>void <code class="descname">append</code><span class="sig-paren">(</span>long <em>timestamp</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6appendElf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds new entry to records container (no spread) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6appendElff">
+<span id="quotek::data::records::append__l.float.float"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1aa5924848f075293e030d087f33ca836e"></span>void <code class="descname">append</code><span class="sig-paren">(</span>long <em>timestamp</em>, float <em>value</em>, float <em>spread</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6appendElff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds new entry to records container (with spread) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records6appendERN6quotek4data7recordsE">
+<span id="quotek::data::records::append__quotek::data::recordsR"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a7c7893ef7afd788bbc94500fe8f825c9"></span>void <code class="descname">append</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records6appendERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>concatenates 2 records datasets to 1 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records3strEKb">
+<span id="quotek::data::records::str__bC"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a701258f7df299d31db0ff733c0581a52"></span>std::string <code class="descname">str</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>add_timestamps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records3strEKb" title="Permalink to this definition">¶</a></dt>
+<dd><p>str takes the data inside the records container and transforms it to a json-formated string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the content of the records container, formatted as a JSON string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">add_timestamps</span></code> - <p>if true, record timestamp will be added to the string. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records3minEv">
+<span id="quotek::data::records::min"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1af920dbe87793e6a151038bd0b29f908e"></span>quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a> <code class="descname">min</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records3minEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>finds record which has the smallest value. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records3maxEv">
+<span id="quotek::data::records::max"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a8af2c8a6f0c0e865a0b7d8a0780c4062"></span>quotek::data::<a class="reference internal" href="record.html#_CPPv2N6quotek4data6recordE" title="quotek::data::record">record</a> <code class="descname">max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records3maxEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>finds record which has the highest value. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records9to_vectorEv">
+<span id="quotek::data::records::to_vector"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a90732b7ccbe8471d51e8e90345abee51"></span>Eigen::VectorXd <code class="descname">to_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records9to_vectorEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to export_values, but instead of returning an std::vector&lt;float&gt;, it returns an Eigen::VectorXd (dvector) data structure. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>all the values alligned inside an Eigen::VectorXd (dvector) </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7records9to_matrixEKb">
+<span id="quotek::data::records::to_matrix__bC"></span><span class="target" id="quotekclassquotek_1_1data_1_1records_1a313a1f558aa6186b1f09eaf64df3822d"></span>Eigen::MatrixXd <code class="descname">to_matrix</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>add_timestamps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7records9to_matrixEKb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the <a class="reference internal" href="#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> structure to an Eigen::MatrixXd (dataset) structure. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>an Eigen::MatrixXd (dataset) representation of the data. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">add_timestamps</span></code> - <p>tells if timestamps must be added to vector or not. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The code below will show you how to manipulate records containers to store and
+retrieve time-series data.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/record.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">//First we create a vector of float values as fake data.</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">4530</span><span class="p">,</span> <span class="mi">4575</span><span class="p">,</span> <span class="mi">4890</span><span class="p">,</span> <span class="mi">4235</span><span class="p">,</span> <span class="mi">4144</span><span class="p">,</span> <span class="mi">4356</span><span class="p">,</span> <span class="mi">4588</span><span class="p">,</span> <span class="mi">4720</span><span class="p">,</span> <span class="mi">4989</span> <span class="p">};</span>
+
+  <span class="c1">//Then we can import these values inside a records container.</span>
+  <span class="n">records</span> <span class="n">r1</span><span class="p">(</span><span class="n">vals</span><span class="p">);</span>
+
+  <span class="c1">//We can iterate through this container with a simple loop:</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">r1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span>  <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//we assign a fake timestamp and spread value to record at position i</span>
+    <span class="n">r1</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">r1</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">spread</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">//Prints the value of record at position i</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">r1</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+  <span class="c1">//To append some data in the container, you must use the append() function:</span>
+  <span class="n">r1</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">4794</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="c1">//Also works, it will not assign any value to timestamp and spread for the newly added record.</span>
+  <span class="n">r1</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4794</span><span class="p">);</span>
+
+  <span class="c1">//Alternatively you can create a record object then append it to the container:</span>
+  <span class="n">record</span> <span class="n">trec</span><span class="p">;</span>
+  <span class="n">trec</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="n">trec</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">4794</span><span class="p">;</span>
+  <span class="n">trec</span><span class="p">.</span><span class="n">spread</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">r1</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">trec</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

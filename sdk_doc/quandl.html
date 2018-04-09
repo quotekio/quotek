@@ -1,0 +1,373 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quandl</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Quandl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etoro.html">eToro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo.html">Yahoo! Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rss.html">RSS Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="quandl">
+<h1>Quandl<a class="headerlink" href="#quandl" title="Permalink to this headline">¶</a></h1>
+<a class="qimg reference internal image-reference" href="_images/quandl-logo.png"><img alt="Quandl data service Logo." class="qimg align-left" src="_images/quandl-logo.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Below lies the documentation of the Quotek SDK quandl API Client. With it will be able to enrich your algos with premium financial data, to later process them with the help of the other SDK functions.</p>
+<p>You can go to <a class="reference external" href="https://www.quandl.com/">https://www.quandl.com/</a> to signup for a Free account, and you can also check <a class="reference external" href="https://www.quandl.com/blog/">https://www.quandl.com/blog/</a> for extra information and resources on the API.</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource6quandlE">
+<span id="quotek::datasource::quandl"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">quandl</code><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandlE" title="Permalink to this definition">¶</a></dt>
+<dd><p>quandl is a class meant to provide a simple quandl API client. Quandl is a very useful service for retrieving lots of financial data coming from various sources. </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl6quandlENSt6stringE">
+<span id="quotek::datasource::quandl::quandl__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1ab75bae29be190ea3f7e01e3556b0a837"></span><code class="descname">quandl</code><span class="sig-paren">(</span>std::string <em>api_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl6quandlENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>quandl class constructor. 
+Note: you can add an empty api_key &#8220;&#8221; but then are limited to 50 queries/day. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">api_key</span></code> - <p>Account API Key provided by quandl.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandlD0Ev">
+<span id="quotek::datasource::quandl::~quandl"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1a7b68a800b0912c465c5bfc1a1a7d4040"></span><code class="descname">~quandl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandlD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>quandl class destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl13get_databasesEKi">
+<span id="quotek::datasource::quandl::get_databases__iC"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1a876c38c3c235e8af6870682a4d4a15b1"></span>std::vector&lt;quotek::datasource::quandl_db&gt; <code class="descname">get_databases</code><span class="sig-paren">(</span><em class="property">const</em> int <em>pgnum</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl13get_databasesEKi" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_databases retrieves the full list of databases available on the quandl service. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the list of available databases on quandl service , as quotek::datasource::quandl_db objects. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">pgnum</span></code> - <p>Starting page number you want to get data from. Mostly for recursion, you shouldn&#8217;t take care of this. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl12get_metadataENSt6stringENSt6stringE">
+<span id="quotek::datasource::quandl::get_metadata__ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1a64f3481482dad18689c8728ca43f2996"></span>quotek::datasource::quandl_meta <code class="descname">get_metadata</code><span class="sig-paren">(</span>std::string <em>database</em>, std::string <em>dataset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl12get_metadataENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_metadatas allows to retrieve the metadata associated with a given dataset.  database to get metadata from.  dataset to get metadata from. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a quotek::datasource::quandl_meta object containing the metadata info. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl5queryENSt6stringENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKiKiKb">
+<span id="quotek::datasource::quandl::query__ss.ss.ss.ssC.ssC.ssC.ssC.ssC.iC.iC.bC"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1a9b026dece75e6284fa4858858b5e7059"></span>std::string <code class="descname">query</code><span class="sig-paren">(</span>std::string <em>database</em>, std::string <em>dataset</em>, std::string <em>format</em>, <em class="property">const</em> std::string <em>start_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>end_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>collapse</em> = &quot;&quot;, <em class="property">const</em> std::string <em>transform</em> = &quot;&quot;, <em class="property">const</em> std::string <em>sort_order</em> = &quot;&quot;, <em class="property">const</em> int <em>nb_rows</em> = -1, <em class="property">const</em> int <em>column_num</em> = -1, <em class="property">const</em> bool <em>exclude_colnames</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl5queryENSt6stringENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKNSt6stringEKiKiKb" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quotekclassquotek_1_1datasource_1_1quandl_1a9b026dece75e6284fa4858858b5e7059"><span>query()</span></a> performs a direct query to the quandl API and returns its output without parsing it, as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the resulting dataset returned by quandl API, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">database</span></code> - <p>database to query from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">dataset</span></code> - <p>dataset in database to get data from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>return format needed. Can be &#8220;csv&#8221;, &#8220;json&#8221; and &#8220;xml&#8221;. </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">start_date</span></code> - <p>YYYY-mm-dd string representation of the first day of data you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">end_date</span></code> - <p>YYYY-mm-dd string representation of the last day of data you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">collapse</span></code> - <p>aggregation of your data. Can be &#8220;daily&#8221;, &#8220;weekly&#8221;, &#8220;monthly&#8221;, &#8220;quarterly&#8221;, &#8220;annual&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">transform</span></code> - <p>data arithmetic, can be &#8220;diff&#8221;,&#8221;rdiff&#8221;,&#8221;cumul&#8221;,&#8221;normalize&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">sort_order</span></code> - <p>order in which data will be returned. Can be &#8220;asc&#8221; or &#8220;desc&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">nb_rows</span></code> - <p>number of rows to return in the dataset. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">column_num</span></code> - <p>If you want to return only a specific column of the dataset, use this parameter. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">exclude_colnames</span></code> - <p>Put this at true if you want to remove the columns names at the begining of the dataset. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl12query_pricesENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringE">
+<span id="quotek::datasource::quandl::query_prices__ss.ss.ssC.ssC.ssC"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1ab1bd450e0de51e1eab7dcf7755b26b17"></span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">query_prices</code><span class="sig-paren">(</span>std::string <em>database</em>, std::string <em>dataset</em>, <em class="property">const</em> std::string <em>start_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>end_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>collapse</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl12query_pricesENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a query on a prices dataset and returns its result in a <a class="reference internal" href="records.html#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> container. Note that this query only takes the close price. If you want more data you can make a query_fullprices query.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a <a class="reference internal" href="records.html#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> container, containing all the datas of the set. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">database</span></code> - <p>database to query prices from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">dataset</span></code> - <p>dataset to query prices from. </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">start_date</span></code> - <p>YYYY-mm-dd string representation of the first day of cotation you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">send_date</span></code> - <p>YYYY-mm-dd string representation of the last day of cotation you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">collapse</span></code> - <p>aggregation level of your data. Can be &#8220;daily&#8221;, &#8220;weekly&#8221;, &#8220;monthly&#8221;, &#8220;quarterly&#8221;, &#8220;annual&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl16query_fullpricesENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringE">
+<span id="quotek::datasource::quandl::query_fullprices__ss.ss.ssC.ssC.ssC"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1ae3a8127d60d84216eacd213b1046c65b"></span>std::vector&lt;quotek::data::<a class="reference internal" href="history.html#_CPPv2N6quotek4data7historyE" title="quotek::data::history">history</a>&gt; <code class="descname">query_fullprices</code><span class="sig-paren">(</span>std::string <em>database</em>, std::string <em>dataset</em>, <em class="property">const</em> std::string <em>start_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>end_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>collapse</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl16query_fullpricesENSt6stringENSt6stringEKNSt6stringEKNSt6stringEKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a query on a prices dataset and returns its result in a vector of <a class="reference internal" href="history.html#quotekclassquotek_1_1data_1_1history"><span>quotek::data::history</span></a> objects (open high low close).</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of <a class="reference internal" href="history.html#quotekclassquotek_1_1data_1_1history"><span>quotek::data::history</span></a> objects, containing all the datas of the set. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">database</span></code> - <p>database to query prices from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">dataset</span></code> - <p>dataset to query prices from. </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">start_date</span></code> - <p>YYYY-mm-dd string representation of the first day of cotation you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">send_date</span></code> - <p>YYYY-mm-dd string representation of the last day of cotation you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">collapse</span></code> - <p>aggregation level of your data. Can be &#8220;daily&#8221;, &#8220;weekly&#8221;, &#8220;monthly&#8221;, &#8220;quarterly&#8221;, &#8220;annual&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource6quandl10get_columnENSt6stringENSt6stringEiKNSt6stringEKNSt6stringEKNSt6stringE">
+<span id="quotek::datasource::quandl::get_column__ss.ss.i.ssC.ssC.ssC"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1quandl_1a2e1f79b817591b8174eede21e23c372e"></span>std::vector&lt;float&gt; <code class="descname">get_column</code><span class="sig-paren">(</span>std::string <em>database</em>, std::string <em>dataset</em>, int <em>column_num</em>, <em class="property">const</em> std::string <em>start_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>end_date</em> = &quot;&quot;, <em class="property">const</em> std::string <em>collapse</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource6quandl10get_columnENSt6stringENSt6stringEiKNSt6stringEKNSt6stringEKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a specific data column of float values. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of float values. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">database</span></code> - <p>database to get data from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">dataset</span></code> - <p>dataset to get data from. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">column_num</span></code> - <p>column number to fetch. </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">start_date</span></code> - <p>YYYY-mm-dd string representation of the first day of data you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">send_date</span></code> - <p>YYYY-mm-dd string representation of the last day of data you want in the set. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">collapse</span></code> - <p>aggregation level of your data. Can be &#8220;daily&#8221;, &#8220;weekly&#8221;, &#8220;monthly&#8221;, &#8220;quarterly&#8221;, &#8220;annual&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>You will find below and sample source code about how to use the Quotek&#8217;s quandl client.</p>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/quandl.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//creates a new quandl object</span>
+  <span class="n">quandl</span> <span class="n">qc</span><span class="p">(</span><span class="s">&quot;my-ApI-kEy&quot;</span><span class="p">);</span>
+
+  <span class="cm">/*fetches weekly aggregated values for the Facebook stock and</span>
+<span class="cm">    stores it in a quotek::data::records container. */</span>
+  <span class="n">records</span> <span class="n">recs</span> <span class="o">=</span> <span class="n">qc</span><span class="p">.</span><span class="n">query_values</span><span class="p">(</span><span class="s">&quot;WIKI&quot;</span><span class="p">,</span><span class="s">&quot;FB&quot;</span><span class="p">,</span><span class="s">&quot;weekly&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

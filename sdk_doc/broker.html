@@ -1,0 +1,273 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Broker API</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="broker-api">
+<h1>Broker API<a class="headerlink" href="#broker-api" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek6brokerE">
+<span id="quotek::broker"></span><span class="target" id="quotekclassquotek_1_1broker"></span><em class="property">class </em><code class="descclassname">quotek::</code><code class="descname">broker</code><a class="headerlink" href="#_CPPv2N6quotek6brokerE" title="Permalink to this definition">¶</a></dt>
+<dd><p>broker class is meant to embedd all the methods that interract with the broker configured by the user. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker6brokerEP8strategy">
+<span id="quotek::broker::broker__strategyP"></span><span class="target" id="quotekclassquotek_1_1broker_1ab1fc1cc3a18d99f0c830a5f95014120e"></span><code class="descname">broker</code><span class="sig-paren">(</span>strategy *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker6brokerEP8strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Broker object constructor <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>new broker object. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">strategy</span></code> - <p>back link to parent strategy object </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker3buyENSt6stringEiii">
+<span id="quotek::broker::buy__ss.i.i.i"></span><span class="target" id="quotekclassquotek_1_1broker_1aa6ec79203fc7f545868f98250d4bbad0"></span>void <code class="descname">buy</code><span class="sig-paren">(</span>std::string <em>asset</em>, int <em>quantity</em>, int <em>stop</em>, int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker3buyENSt6stringEiii" title="Permalink to this definition">¶</a></dt>
+<dd><p>buy sends a buy order to the broker. it will then open a long position having the caracteristics defined in the arguments. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">asset</span></code> - <p>name of the asset to take position on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">quantity</span></code> - <p>Number of contracts to take for the position. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">stop</span></code> - <p>Stop-loss security thereshold, in BPS. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">limit</span></code> - <p>Profit thereshold before close, in BPS. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker10buy_hedgedENSt6stringENSt6stringEiii">
+<span id="quotek::broker::buy_hedged__ss.ss.i.i.i"></span><span class="target" id="quotekclassquotek_1_1broker_1ab6761479b4b30ef4c17ca00e95377b23"></span>void <code class="descname">buy_hedged</code><span class="sig-paren">(</span>std::string <em>asset</em>, std::string <em>hedged_asset</em>, int <em>quantity</em>, int <em>stop</em>, int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker10buy_hedgedENSt6stringENSt6stringEiii" title="Permalink to this definition">¶</a></dt>
+<dd><p>buy_hedged sends a buy order to the broker along with a sell order for the another asset. quantity, stop and limits are the same for the long position and the hedged one. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">asset</span></code> - <p>name of the asset to take position on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">hedged_asset</span></code> - <p>name of the asset to take position on for hedging. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">quantity</span></code> - <p>Number of contracts to take for the position. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">stop</span></code> - <p>Stop-loss security thereshold, in BPS. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">limit</span></code> - <p>Profit thereshold before close, in BPS. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker15buy_hedged_asymENSt6stringEiiiNSt6stringEiii">
+<span id="quotek::broker::buy_hedged_asym__ss.i.i.i.ss.i.i.i"></span><span class="target" id="quotekclassquotek_1_1broker_1a699b59461a47ff95c5f2d092a0761226"></span>void <code class="descname">buy_hedged_asym</code><span class="sig-paren">(</span>std::string <em>asset</em>, int <em>quantity</em>, int <em>stop</em>, int <em>limit</em>, std::string <em>hedged_asset</em>, int <em>hedged_quantity</em>, int <em>hedged_stop</em>, int <em>hedged_limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker15buy_hedged_asymENSt6stringEiiiNSt6stringEiii" title="Permalink to this definition">¶</a></dt>
+<dd><p>same than buy_hedged but here you can choose the quantity, stop and limit for hedged asset. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker4sellENSt6stringEiii">
+<span id="quotek::broker::sell__ss.i.i.i"></span><span class="target" id="quotekclassquotek_1_1broker_1a5c28b8a7e6c111373d43d079bd297aa0"></span>void <code class="descname">sell</code><span class="sig-paren">(</span>std::string <em>asset</em>, int <em>quantity</em>, int <em>stop</em>, int <em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker4sellENSt6stringEiii" title="Permalink to this definition">¶</a></dt>
+<dd><p>sell sends a sell order to the broker. It will then open a short position having the caracteristics defined in the arguments. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">asset</span></code> - <p>name of the asset to take position on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">quantity</span></code> - <p>Number of contracts to take for the position. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">stop</span></code> - <p>Stop-loss security thereshold, in BPS. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">limit</span></code> - <p>Profit thereshold before close, in BPS. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker8smartbuyENSt6stringEi">
+<span id="quotek::broker::smartbuy__ss.i"></span><span class="target" id="quotekclassquotek_1_1broker_1a43cb1af7a6a4962867dc98c65535d450"></span>void <code class="descname">smartbuy</code><span class="sig-paren">(</span>std::string <em>asset</em>, int <em>expexted_risk_reward</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker8smartbuyENSt6stringEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>smartbuy will place a long trade where stop and limit will be automatically computed according to:<ul class="simple">
+<li>a risk reward ratio provided by the user</li>
+<li>money management rules defined in the configuration </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker9smartsellENSt6stringEi">
+<span id="quotek::broker::smartsell__ss.i"></span><span class="target" id="quotekclassquotek_1_1broker_1a3f4884aec10fbc681a7e47d9a41c4a37"></span>void <code class="descname">smartsell</code><span class="sig-paren">(</span>std::string <em>asset</em>, int <em>expexted_risk_reward</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker9smartsellENSt6stringEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>smartsell will place a short trade where stop and limit will be automatically computed according to:<ul class="simple">
+<li>a risk reward ratio provided by the user.</li>
+<li>money management rules defined in the configuration. </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek6broker14close_positionENSt6stringE">
+<span id="quotek::broker::close_position__ss"></span><span class="target" id="quotekclassquotek_1_1broker_1a4ff2360e8c96c5ed538bb112d32662e9"></span>void <code class="descname">close_position</code><span class="sig-paren">(</span>std::string <em>ticket_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek6broker14close_positionENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>close_position allows to close a position given its ticket id given by the broker. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">ticket_id</span></code> - <p>id of the position ticket provided by the broker. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

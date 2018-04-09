@@ -1,0 +1,219 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Data Structures</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="record.html">Record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="records.html">Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html">News</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="data-structures">
+<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h1>
+<p>This section explains how to import and store structured financial data with with Quotek SDK.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="time-series-data">
+<h2>Time Series Data<a class="headerlink" href="#time-series-data" title="Permalink to this headline">¶</a></h2>
+<p>There are three main time-series formats usable with Quotek SDK functions:</p>
+<div class="section" id="quotek-data-record">
+<h3>quotek::data::record<a class="headerlink" href="#quotek-data-record" title="Permalink to this headline">¶</a></h3>
+<p>quotek::data::record is the main tick data container. Its purpose is to store raw, real-time data provided by your broker. It has 3 main attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">timestamp:</span></code> epoch timestamp of the tick (in seconds).</li>
+<li><code class="docutils literal"><span class="pre">value:</span></code> value of asset at time &#8216;timestamp&#8217;.</li>
+<li><code class="docutils literal"><span class="pre">spread:</span></code> spread offered by broker at time &#8216;timestamp&#8217;.</li>
+</ul>
+</div></blockquote>
+<p><strong>Note about spread:</strong> This attribute is not mandatory to create record objects, so you can work with it only if you have it.</p>
+<p>for further infos, please read the <a class="reference internal" href="record.html"><em>quotek::data::record documentation</em></a></p>
+</div>
+<div class="section" id="quotek-data-records">
+<h3>quotek::data::records<a class="headerlink" href="#quotek-data-records" title="Permalink to this headline">¶</a></h3>
+<p>quotek::data::records is a container of quotek::data::record. It embeddeds an internal vector container and various methods for processing this container.</p>
+<p>The scheme displayed below represents the description of the quotek::data::records data structure:</p>
+<img alt="_images/recs_datastruct.png" src="_images/recs_datastruct.png" />
+</div>
+<div class="section" id="quotek-data-history">
+<h3>quotek::data::history<a class="headerlink" href="#quotek-data-history" title="Permalink to this headline">¶</a></h3>
+<p>The history container was created to store <strong>(open,close,high,low)</strong> time-series data,
+which is the typical data structure returned by financial databases like yahoo! finance, quandl, etc..</p>
+<p>If you need to store full history time-series, you can vectorize the class by declaring an <code class="docutils literal"><span class="pre">std::vector&lt;quotek::data::history&gt;</span></code></p>
+</div>
+<div class="section" id="extracting-and-down-sampling">
+<h3>Extracting and Down-Sampling<a class="headerlink" href="#extracting-and-down-sampling" title="Permalink to this headline">¶</a></h3>
+<p>In order to analyze time-series data, you will often have to use a subset sample or reduce the amount of ticks in the sample.
+This is why these functions were implemented in Quotek SDK, and they work as follows:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/record.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">records</span> <span class="n">r1</span><span class="p">({</span><span class="mi">4559</span><span class="p">,</span><span class="mi">4557</span><span class="p">,</span><span class="mf">4556.2</span><span class="p">,</span><span class="mf">4558.4</span><span class="p">});</span>
+
+  <span class="c1">//we extract the last 2 values of r1:</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">records</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">r1</span><span class="p">.</span><span class="n">extract</span><span class="p">(</span> <span class="n">r1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+
+  <span class="c1">//we down-sample r1 to reduce it to only 2 values:</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">records</span> <span class="n">r3</span> <span class="o">=</span> <span class="n">r1</span><span class="p">.</span><span class="n">down_sample</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;typical&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="multi-dimentional-arrays">
+<h2>Multi-Dimentional Arrays<a class="headerlink" href="#multi-dimentional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>The quotek SDK embedds the <a class="reference external" href="http://eigen.tuxfamily.org/">Eigen Linear Algebra Library</a> and at this regard, it benefits from the multiple containers usable in Eigen. For more informations, please visit <a class="reference external" href="http://eigen.tuxfamily.org/dox/">http://eigen.tuxfamily.org/dox/</a></p>
+</div>
+<div class="section" id="text-data">
+<h2>Text Data<a class="headerlink" href="#text-data" title="Permalink to this headline">¶</a></h2>
+<p>Along with time series, text information can be vital to assess market contexts, especially financial news.
+That&#8217;s why the quotek::data::news class was created, and every news datasource class in the SDK uses it to return news content.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

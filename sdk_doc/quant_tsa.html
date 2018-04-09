@@ -1,0 +1,813 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Time Series Analysis</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="quant.html">Quant Functions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Time Series Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quant_blackscholes.html">Options pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quant_generators.html">Generators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="time-series-analysis">
+<h1>Time Series Analysis<a class="headerlink" href="#time-series-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="position-detection-thereholds">
+<h2>Position detection, thereholds<a class="headerlink" href="#position-detection-thereholds" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant5aboveERN6quotek4data7recordsEff">
+<span id="quotek::quant::above__quotek::data::recordsR.float.float"></span><span class="target" id="quoteknamespacequotek_1_1quant_1abd17868f0f93e2b7848d3dbda353b1ad"></span>bool <code class="descclassname">quotek::quant::</code><code class="descname">above</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, float <em>value</em>, float <em>thereshold</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant5aboveERN6quotek4data7recordsEff" title="Permalink to this definition">¶</a></dt>
+<dd><p>above tells if the values contained in the provided dataset are mostly above or below value. accuracy will depend on provided thereshold (between 0 and 1) , 1 meaning that all the values of dataset must be higher than value to return true, 0.5 meaning that half the values must be higher. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if dataset is above value, false otherwise. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>value to test dataset against. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">thereshold</span></code> - <p>integer in [0,1] that indicates the percentage of value in the dataset that must be above value. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant5crossERN6quotek4data7recordsERN6quotek4data7recordsE">
+<span id="quotek::quant::cross__quotek::data::recordsR.quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a526a855efb9ea8fcd9e03e93ab09ee0d"></span>bool <code class="descclassname">quotek::quant::</code><code class="descname">cross</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs1</em>, quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant5crossERN6quotek4data7recordsERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects if 2 value time-series cross each other. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if 2 datasets cross each other, false otherwise. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs1</span></code> - <p>first values dataset. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">recs2</span></code> - <p>second values dataset. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant8cross_exERN6quotek4data7recordsERN6quotek4data7recordsE">
+<span id="quotek::quant::cross_ex__quotek::data::recordsR.quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1aef40df5b8762f91b69c2e0ecd3f82d28"></span>int <code class="descclassname">quotek::quant::</code><code class="descname">cross_ex</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs1</em>, quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant8cross_exERN6quotek4data7recordsERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alternate version of bool <a class="reference internal" href="#quoteknamespacequotek_1_1quant_1a526a855efb9ea8fcd9e03e93ab09ee0d"><span>cross()</span></a> , but adds information in return value. If time-series don&#8217;t cross, the function returns 0. If recs1 is on top, then it returns 1. If recs2 is on top, it returns 2. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 if no cross, 1 if cross and recs1 is on top, 2 if cross and recs2 is on top. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs1</span></code> - <p>first values time-series. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">recs2</span></code> - <p>second values time-series. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="basic-analysis">
+<h2>Basic analysis<a class="headerlink" href="#basic-analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant3minERN6quotek4data7recordsE">
+<span id="quotek::quant::min__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1aa4564f8368d7576085cf00fbc30ba127"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">min</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant3minERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quoteknamespacequotek_1_1quant_1aa4564f8368d7576085cf00fbc30ba127"><span>min()</span></a> returns the smallest value contained in the provided recs dataset to work on. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the smallest value stored in recs dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant3maxERN6quotek4data7recordsE">
+<span id="quotek::quant::max__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a42d6e03c557d63b5ca4755bc1239a9fa"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">max</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant3maxERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quoteknamespacequotek_1_1quant_1a42d6e03c557d63b5ca4755bc1239a9fa"><span>max()</span></a> return the largest value contained in the provided <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the largest value stored in recs dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant7averageERN6quotek4data7recordsE">
+<span id="quotek::quant::average__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a032568e7e960c11acba8c378cb7605d5"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant7averageERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns an average of the values contained in the provided recs dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the mean value of the dataset, as a float value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant16weighted_averageERN6quotek4data7recordsERNSt6vectorIiEE">
+<span id="quotek::quant::weighted_average__quotek::data::recordsR.std::vector:i:R"></span><span class="target" id="quoteknamespacequotek_1_1quant_1abc402e371a508098f3555fe977d1bb50"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">weighted_average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, std::vector&lt;int&gt; &amp;<em>weights</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant16weighted_averageERN6quotek4data7recordsERNSt6vectorIiEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a weight average of the values contained in the provided recs dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the mean value of the dataset, as a float value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">weights</span></code> - <p>weights vector. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant8varianceERN6quotek4data7recordsEb">
+<span id="quotek::quant::variance__quotek::data::recordsR.b"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a7bb99b0dbd574615968ce6705a54032b"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">variance</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, bool <em>sampled</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant8varianceERN6quotek4data7recordsEb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the variance of the values contained in the provided recs dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>variance of the recs dataset, as a float value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">sampled</span></code> - <p>when you need to make a variance estimate, elimites bias by dividing by N-1 instead of N. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant10variance_qERN6quotek4data7recordsEbf">
+<span id="quotek::quant::variance_q__quotek::data::recordsR.b.float"></span><span class="target" id="quoteknamespacequotek_1_1quant_1ac8fe64bfb35ec7d69302eeb24473c8a2"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">variance_q</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, bool <em>sampled</em>, float <em>average</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant10variance_qERN6quotek4data7recordsEbf" title="Permalink to this definition">¶</a></dt>
+<dd><p>variance_q is a performance-shaped function that will compute variance of the values for the provided recs dataset but also provided that you already know the average of the values from a previous compute. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>variance of the recs dataset, as a float value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">sampled</span></code> - <p>when you need to make a variance estimate, elimites bias by dividing by N-1 instead of N. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">average</span></code> - <p>pre-computed average of the dataset (for instance coming from previous calculus). </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant10covarianceERN6quotek4data7recordsERN6quotek4data7recordsE">
+<span id="quotek::quant::covariance__quotek::data::recordsR.quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a31b68ea0e03bb18ad66d8418b0917064"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">covariance</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs1</em>, quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant10covarianceERN6quotek4data7recordsERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes covariance of values between two datasets recs1 and recs2. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the covariance between the 2 provided datasets, as a float. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs1</span></code> - <p>the first dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">recs2</span></code> - <p>the second dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant12covariance_qERN6quotek4data7recordsERN6quotek4data7recordsEff">
+<span id="quotek::quant::covariance_q__quotek::data::recordsR.quotek::data::recordsR.float.float"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a30126d195f0f17d4a9a7297dd4cb8815"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">covariance_q</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs1</em>, quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs2</em>, float <em>average_1</em>, float <em>average_2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant12covariance_qERN6quotek4data7recordsERN6quotek4data7recordsEff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quick version of covariance, provided that you already know the averages of the 2 datasets. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the covariance between the 2 provided datasets, as a float. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs1</span></code> - <p>the first dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">recs2</span></code> - <p>the second dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">average_1</span></code> - <p>pre-computed average of first dataset. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">average_2</span></code> - <p>prec-computed average of second dataset. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant18standard_deviationERN6quotek4data7recordsEb">
+<span id="quotek::quant::standard_deviation__quotek::data::recordsR.b"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a40e27b51169fcfdeb44ee1b25ceef4d0"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">standard_deviation</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, bool <em>sample</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant18standard_deviationERN6quotek4data7recordsEb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the standard deviation for the values contained in the recs dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the standard deviation of the provided dataset, as a float. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on.  if true, computes sample standard deviation, population standard deviation otherwise. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant30normal_cumulative_distributionEf">
+<span id="quotek::quant::normal_cumulative_distribution__float"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a16970ff888cb5cdc413d4a205b40231f"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">normal_cumulative_distribution</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant30normal_cumulative_distributionEf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the cumulative normal density (PHI) for a given value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>CDF for value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to compute PHI from. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant28standard_normal_distributionEf">
+<span id="quotek::quant::standard_normal_distribution__float"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a63fda53bf31500036491c4114fab79ff"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">standard_normal_distribution</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant28standard_normal_distributionEf" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the standard normal distribution of a given value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Normal distribution for value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to compute SND from. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="moving-averages">
+<h2>Moving Averages<a class="headerlink" href="#moving-averages" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant14moving_averageERN6quotek4data7recordsEi">
+<span id="quotek::quant::moving_average__quotek::data::recordsR.i"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a38d2d365b66923b8b546b56269ee471e"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">moving_average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, int <em>periods</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant14moving_averageERN6quotek4data7recordsEi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant26exponential_moving_averageERN6quotek4data7recordsEi">
+<span id="quotek::quant::exponential_moving_average__quotek::data::recordsR.i"></span><span class="target" id="quoteknamespacequotek_1_1quant_1af66b311c1f8977e916e0106ebe78b3d7"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">exponential_moving_average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, int <em>periods</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant26exponential_moving_averageERN6quotek4data7recordsEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the exponential moving average (EMA) of the provided dataset for n periods. As a reminder, EMA is is a special kind of moving average giving more weight to recent values. eg if you want to compute an EMA100 for the provided dataset, use exponential_moving_average(recs,50) <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of floats containing the graph values of the moving average for the dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">periods</span></code> - <p>the number of dataset values that must be aggregated together to compute a single point of the EMA. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant23weighted_moving_averageERN6quotek4data7recordsEi">
+<span id="quotek::quant::weighted_moving_average__quotek::data::recordsR.i"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a2633f62b9dd8cb1ba86fa2aecfb91929"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">weighted_moving_average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, int <em>periods</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant23weighted_moving_averageERN6quotek4data7recordsEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the weighted moving average (WMA) of the provided dataset for n periods. WMA gives even more weight to recent values than EMA. Note: the weight vector for this function is {1,2,..periods-1,periods} <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">periods</span></code> - <p>Number of periods for the moving average. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant33triple_exponential_moving_averageERN6quotek4data7recordsEi">
+<span id="quotek::quant::triple_exponential_moving_average__quotek::data::recordsR.i"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a3d69ee7bb7a842ee3f024b45459e3a0f"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">triple_exponential_moving_average</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, int <em>periods</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant33triple_exponential_moving_averageERN6quotek4data7recordsEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Triple exponential moving average (TEMA/TRIX) of the provided dataset for n periods. TEMA is a tech indicator that tries to deal with the lag. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of floats containing the graph values of the TEMA for the dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">periods</span></code> - <p>the number of dataset values that must be aggregated together to compute a single point of the TEMA. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="advanced-statistical-analysis">
+<h2>Advanced Statistical Analysis<a class="headerlink" href="#advanced-statistical-analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant17linear_regressionERN6quotek4data7recordsE">
+<span id="quotek::quant::linear_regression__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a5133f3a3707ce35d6952eb7ff0103ed1"></span><a class="reference internal" href="#_CPPv2N6quotek5quant6affineE" title="quotek::quant::affine">affine</a> <code class="descclassname">quotek::quant::</code><code class="descname">linear_regression</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant17linear_regressionERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the linear regression of the values contained in the dataset using an ordinary least squares method, and gives the result as an affine structure such as the line equation is y = <a class="reference internal" href="#quotekstructquotek_1_1quant_1_1affine_1aab4b9fde4925945e78d7b7d86e214e36"><span>affine.a</span></a> * x + <a class="reference internal" href="#quotekstructquotek_1_1quant_1_1affine_1a8cea25a45f356704761ba1456bf83c30"><span>affine.b</span></a> Note about linear regression: in order to avoid troublesome scaling problems, it is computed which sequence(1..dataset_size) as x coordinates. So in order to work properly, it assumes constant interval on x between points of the dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>affine structure containing slope and intercept values. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant17linear_regressionERN6quotek4data7recordsERNSt6vectorIfEE">
+<span id="quotek::quant::linear_regression__quotek::data::recordsR.std::vector:float:R"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a32c383f0b6159e4b50157ec4a685eb54"></span>void <code class="descclassname">quotek::quant::</code><code class="descname">linear_regression</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em>, std::vector&lt;float&gt; &amp;<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant17linear_regressionERN6quotek4data7recordsERNSt6vectorIfEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>linear_regression computes the linear regression of the provided dataset. Note about linear regression: in order to avoid troublesome scaling problems, it is computed which sequence(1..dataset_size) as x coordinates. So in order to work properly, it assumes constant interval on x between points of the dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>none. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">result</span></code> - <p>reference, to store the result of the linear regression. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant21polynomial_regressionERN6quotek4data7recordsE">
+<span id="quotek::quant::polynomial_regression__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a4191c4a6f45483c267822fe0b5796a3d"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">polynomial_regression</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant21polynomial_regressionERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This fucntion computes a polynomial regression from a provided recs dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>vector of floats representing the polynomial regression of dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant15autocorrelationEN6quotek4data7recordsE">
+<span id="quotek::quant::autocorrelation__quotek::data::records"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a30ca1fae207e9f070c90a2a9f46b4683"></span>std::vector&lt;float&gt; <code class="descclassname">quotek::quant::</code><code class="descname">autocorrelation</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant15autocorrelationEN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>autocorrelation is a very useful function that can help to discover seasonalities in time series data. Underlying mecanism for computing autocorrelation uses Fast Fourier Transform.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>computed autocorrelation graph. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to compute autocorrelation for. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="other-forecasting-methods">
+<h2>Other Forecasting Methods<a class="headerlink" href="#other-forecasting-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant17trend_percentagesERN6quotek4data7recordsE">
+<span id="quotek::quant::trend_percentages__quotek::data::recordsR"></span><span class="target" id="quoteknamespacequotek_1_1quant_1aa1d3294addf0ffd5de89818cd34b5ef5"></span><a class="reference internal" href="#_CPPv2N6quotek5quant7trend_pE" title="quotek::quant::trend_p">trend_p</a> <code class="descclassname">quotek::quant::</code><code class="descname">trend_percentages</code><span class="sig-paren">(</span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> &amp;<em>recs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant17trend_percentagesERN6quotek4data7recordsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the bull, bear and neutral ratios for the provided dataset. ratios are provided in percentage. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a <a class="reference internal" href="#quotekstructquotek_1_1quant_1_1trend__p"><span>trend_p</span></a> structure containing the bull, bear and neutral trend percentages for the dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">recs</span></code> - <p>dataset to work on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant17risk_reward_ratioEfii">
+<span id="quotek::quant::risk_reward_ratio__float.i.i"></span><span class="target" id="quoteknamespacequotek_1_1quant_1a521747f90ae71d9d2b6c4cdac5039f8c"></span>float <code class="descclassname">quotek::quant::</code><code class="descname">risk_reward_ratio</code><span class="sig-paren">(</span>float <em>expected_profit</em>, int <em>stop</em>, int <em>leverage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant17risk_reward_ratioEfii" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the risk/reward ratio for a potential trade having the provided caracteristics. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">expected_profit</span></code> - <p>profit in asset&#8217;s currency expected for a trade. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">stop</span></code> - <p>value in BPS where you intend to place your stop value. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">leverage</span><span class="pre">exprimed</span></code> - <p>in protit per BPS, you intend to add on your trade. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="dedicated-data-structures">
+<h2>Dedicated Data Structures<a class="headerlink" href="#dedicated-data-structures" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant6affineE">
+<span id="quotek::quant::affine"></span><span class="target" id="quotekstructquotek_1_1quant_1_1affine"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">affine</code><a class="headerlink" href="#_CPPv2N6quotek5quant6affineE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This structure aims to store slope-intercept equations parameters. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6affine1aE">
+<span id="quotek::quant::affine::a__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1affine_1aab4b9fde4925945e78d7b7d86e214e36"></span>float <code class="descname">a</code><a class="headerlink" href="#_CPPv2N6quotek5quant6affine1aE" title="Permalink to this definition">¶</a></dt>
+<dd><p>slope </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6affine1bE">
+<span id="quotek::quant::affine::b__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1affine_1a8cea25a45f356704761ba1456bf83c30"></span>float <code class="descname">b</code><a class="headerlink" href="#_CPPv2N6quotek5quant6affine1bE" title="Permalink to this definition">¶</a></dt>
+<dd><p>intercept </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant6trinomE">
+<span id="quotek::quant::trinom"></span><span class="target" id="quotekstructquotek_1_1quant_1_1trinom"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">trinom</code><a class="headerlink" href="#_CPPv2N6quotek5quant6trinomE" title="Permalink to this definition">¶</a></dt>
+<dd><p>trinom is a struct that aims to store 2nd degree polynom parameters. </p>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant7_greeksE">
+<span id="quotek::quant::_greeks"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">_greeks</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeksE" title="Permalink to this definition">¶</a></dt>
+<dd><p>greeks is a structure meant to store greek values involved in portfolio modeling. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7_greeks5deltaE">
+<span id="quotek::quant::_greeks::delta__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks_1a497bfded702f63e5d40893cd9e6f08f2"></span>float <code class="descname">delta</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeks5deltaE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores delta part of the greeks </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7_greeks5gammaE">
+<span id="quotek::quant::_greeks::gamma__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks_1a2b12ed7072b4fb9c6e10747700713334"></span>float <code class="descname">gamma</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeks5gammaE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores gamma part of the greeks </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7_greeks5thetaE">
+<span id="quotek::quant::_greeks::theta__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks_1aa7dfa9d17dc5273e0bb428a317be6d59"></span>float <code class="descname">theta</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeks5thetaE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores theta part of the greeks </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7_greeks4vegaE">
+<span id="quotek::quant::_greeks::vega__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks_1aaa6b04f80dfea777769484551cc03e1c"></span>float <code class="descname">vega</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeks4vegaE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores vega part of the greeks </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7_greeks3rhoE">
+<span id="quotek::quant::_greeks::rho__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1__greeks_1a6c719d2c9aa3d5940e3338f2c53dae5e"></span>float <code class="descname">rho</code><a class="headerlink" href="#_CPPv2N6quotek5quant7_greeks3rhoE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores rho part of the greeks </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant5pivotE">
+<span id="quotek::quant::pivot"></span><span class="target" id="quotekstructquotek_1_1quant_1_1pivot"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">pivot</code><a class="headerlink" href="#_CPPv2N6quotek5quant5pivotE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant8fibo_retE">
+<span id="quotek::quant::fibo_ret"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">fibo_ret</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_retE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quotekstructquotek_1_1quant_1_1fibo__ret"><span>fibo_ret</span></a> is a structure that stores the different fibonacci retracements for a time-serie </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret2p0E">
+<span id="quotek::quant::fibo_ret::p0__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1a867eac3426512905dbccecdbeb6eee8c"></span>float <code class="descname">p0</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret2p0E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 0% </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret3p23E">
+<span id="quotek::quant::fibo_ret::p23__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1a8b1ac2510b07b23c69fd965fa04a29a3"></span>float <code class="descname">p23</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret3p23E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 23.6 % </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret3p38E">
+<span id="quotek::quant::fibo_ret::p38__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1a9a84597d2e29ec1d7219179c3a045b06"></span>float <code class="descname">p38</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret3p38E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 38.2 % </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret3p50E">
+<span id="quotek::quant::fibo_ret::p50__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1a43496127028edf590a652677e835d45b"></span>float <code class="descname">p50</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret3p50E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 50%. Please note that this is not really a fibo level but since it is highly used, it is also computed. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret3p61E">
+<span id="quotek::quant::fibo_ret::p61__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1a1bef745d1c9d70c68d28eed282606749"></span>float <code class="descname">p61</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret3p61E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 61.8 % </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ret4p100E">
+<span id="quotek::quant::fibo_ret::p100__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ret_1aeae1cdd0d86e1241692d3df4cea5c063"></span>float <code class="descname">p100</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ret4p100E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 100 % </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant8fibo_extE">
+<span id="quotek::quant::fibo_ext"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">fibo_ext</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_extE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quotekstructquotek_1_1quant_1_1fibo__ext"><span>fibo_ext</span></a> is a structure that stores the different fibonacci extensions for a time-series </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ext4p100E">
+<span id="quotek::quant::fibo_ext::p100__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext_1aceae2a0ba182323bc4ee3d30835a3bb2"></span>float <code class="descname">p100</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ext4p100E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 0% </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ext4p127E">
+<span id="quotek::quant::fibo_ext::p127__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext_1adcda8705afeb5bb4b7cbb6f052bc33dc"></span>float <code class="descname">p127</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ext4p127E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 127.2 % </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ext4p161E">
+<span id="quotek::quant::fibo_ext::p161__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext_1a33f0ca15d784a6963e81d1b04053a914"></span>float <code class="descname">p161</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ext4p161E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 161.8%. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ext4p200E">
+<span id="quotek::quant::fibo_ext::p200__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext_1a3dc18a8e643116ffce427e4a9d3e66ff"></span>float <code class="descname">p200</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ext4p200E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 200 % </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant8fibo_ext4p261E">
+<span id="quotek::quant::fibo_ext::p261__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1fibo__ext_1a04103fd8bc1f596eef3cbcdaf5a48bac"></span>float <code class="descname">p261</code><a class="headerlink" href="#_CPPv2N6quotek5quant8fibo_ext4p261E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores level 261.8 % </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant7trend_pE">
+<span id="quotek::quant::trend_p"></span><span class="target" id="quotekstructquotek_1_1quant_1_1trend__p"></span><em class="property">struct </em><code class="descclassname">quotek::quant::</code><code class="descname">trend_p</code><a class="headerlink" href="#_CPPv2N6quotek5quant7trend_pE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This structure stores trend percentage analysis. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7trend_p4bullE">
+<span id="quotek::quant::trend_p::bull__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1trend__p_1a8bda984cfe4299ec6fd6019c5f7c8b1f"></span>float <code class="descname">bull</code><a class="headerlink" href="#_CPPv2N6quotek5quant7trend_p4bullE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores bull percentage of a dataset </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7trend_p4bearE">
+<span id="quotek::quant::trend_p::bear__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1trend__p_1a7399058c4ae6b670a29e860b04b70329"></span>float <code class="descname">bear</code><a class="headerlink" href="#_CPPv2N6quotek5quant7trend_p4bearE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores bear percentage of a dataset. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant7trend_p7neutralE">
+<span id="quotek::quant::trend_p::neutral__float"></span><span class="target" id="quotekstructquotek_1_1quant_1_1trend__p_1a33589a764698d29ec0c54c4f48ab0c82"></span>float <code class="descname">neutral</code><a class="headerlink" href="#_CPPv2N6quotek5quant7trend_p7neutralE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores neutral percentage of a dataset. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>In the following example we will see how to use the statistical analysis functions listed above.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/record.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/quant.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">quant</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+
+  <span class="cm">/* First we create fake data. */</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span> <span class="n">tstamps</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1437143900</span><span class="p">,</span>
+                                <span class="mi">1437143901</span><span class="p">,</span>
+                                <span class="mi">1437143902</span><span class="p">,</span>
+                                <span class="mi">1437143903</span><span class="p">,</span>
+                                <span class="mi">1437143904</span><span class="p">,</span>
+                                <span class="mi">1437143905</span><span class="p">,</span>
+                                <span class="mi">1437143906</span><span class="p">,</span>
+                                <span class="mi">1437143907</span><span class="p">,</span>
+                                <span class="mi">1437143908</span> <span class="p">};</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">4530</span><span class="p">,</span> <span class="mi">4575</span><span class="p">,</span> <span class="mi">4890</span><span class="p">,</span> <span class="mi">4235</span><span class="p">,</span> <span class="mi">4144</span><span class="p">,</span> <span class="mi">4356</span><span class="p">,</span> <span class="mi">4588</span><span class="p">,</span> <span class="mi">4720</span><span class="p">,</span> <span class="mi">4989</span> <span class="p">};</span>
+
+
+  <span class="cm">/* Then we create a records container from these data. */</span>
+  <span class="n">records</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">records</span><span class="p">(</span><span class="n">vals</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span> <span class="n">r1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">r1</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">tstamps</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+  <span class="p">}</span>
+
+  <span class="cm">/* We find the minimum value inside the r1 time-series, value is 4144. */</span>
+  <span class="kt">float</span> <span class="n">minval</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">r1</span><span class="p">);</span>
+
+  <span class="cm">/* Now we compute the 5 periods Exponential moving average for the r1 time-series.</span>
+<span class="cm">     Result is the following: {4552.5, 4560, 4670, 4525, 4398, 4384, 4452, 4541.33 }. */</span>
+
+  <span class="n">records</span> <span class="n">r3</span> <span class="o">=</span> <span class="n">EMA</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+  <span class="cm">/* Finally We compute the linear regression of the r1 time-series. Affine parameters are</span>
+<span class="cm">  (29.8, 4409.56) */</span>
+
+  <span class="n">affine</span> <span class="n">af</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">r1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

@@ -1,0 +1,249 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>NLP Data Structures</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="nlp.html">Natural Language Processing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="alchemy.html">Alchemy API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">NLP Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="nlp-data-structures">
+<h1>NLP Data Structures<a class="headerlink" href="#nlp-data-structures" title="Permalink to this headline">¶</a></h1>
+<p>In order to help developers formalize responses to NLP Queries, quotek provides a set of structures to store the data.</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek3nlp9sentimentE">
+<span id="quotek::nlp::sentiment"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment"></span><em class="property">struct </em><code class="descclassname">quotek::nlp::</code><code class="descname">sentiment</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentimentE" title="Permalink to this definition">¶</a></dt>
+<dd><div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp9sentiment5scoreE">
+<span id="quotek::nlp::sentiment::score__float"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment_1a9e0459a220e1d41fb35f529eb862f696"></span>float <code class="descname">score</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentiment5scoreE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the computed sentiment score. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp9sentiment12sentimentstrE">
+<span id="quotek::nlp::sentiment::sentimentstr__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment_1a1301fc0aefdfb9ac226c0b7ff54196a0"></span>std::string <code class="descname">sentimentstr</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentiment12sentimentstrE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores whether the computed sentiment is felt overall as positive, negative or neutral. so data stored in here can be &#8220;positive&#8221;, &#8220;negative&#8221; or &#8220;neutral&#8221; </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp9sentiment5mixedE">
+<span id="quotek::nlp::sentiment::mixed__b"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment_1a7c1acf6ffafea9dd334845ada409bc02"></span>bool <code class="descname">mixed</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentiment5mixedE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores whether the sentiment is felt as mixed or not. If sentiment is mixed, you should take the result carefully. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp9sentiment5errorE">
+<span id="quotek::nlp::sentiment::error__b"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment_1ac8046843cf7e93f28402f40b9cd29923"></span>bool <code class="descname">error</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentiment5errorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if sentiment analysis failed or not </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp9sentiment13error_messageE">
+<span id="quotek::nlp::sentiment::error_message__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1sentiment_1a4b407659ad0c7640484235fb1a521e4b"></span>std::string <code class="descname">error_message</code><a class="headerlink" href="#_CPPv2N6quotek3nlp9sentiment13error_messageE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores the analysis error message in case of failure </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek3nlp8relationE">
+<span id="quotek::nlp::relation"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1relation"></span><em class="property">struct </em><code class="descclassname">quotek::nlp::</code><code class="descname">relation</code><a class="headerlink" href="#_CPPv2N6quotek3nlp8relationE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relation structures contain results of machine learning relationship algorithms, which mainly allow to guess &#8220;Who does what&#8221;. This is a trivial form of summerizing which allows machine processing of complex texts. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp8relation7subjectE">
+<span id="quotek::nlp::relation::subject__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1relation_1a52355d3cae2fbff80045054bdffaf27a"></span>std::string <code class="descname">subject</code><a class="headerlink" href="#_CPPv2N6quotek3nlp8relation7subjectE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells who/what is the subject of the sentence. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp8relation6actionE">
+<span id="quotek::nlp::relation::action__quotek::nlp::action"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1relation_1a1b26c6c8ddb844f41e4219d24a2aa4ce"></span>quotek::nlp::<a class="reference internal" href="#_CPPv2N6quotek3nlp6actionE" title="quotek::nlp::action">action</a> <code class="descname">action</code><a class="headerlink" href="#_CPPv2N6quotek3nlp8relation6actionE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells what and kind of action is performed in sentence. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp8relation6objectE">
+<span id="quotek::nlp::relation::object__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1relation_1ad617cfc2b1b817dbc2f9afc63a59900e"></span>std::string <code class="descname">object</code><a class="headerlink" href="#_CPPv2N6quotek3nlp8relation6objectE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells on what/who the action is performed. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp8relation8sentenceE">
+<span id="quotek::nlp::relation::sentence__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1relation_1afc4c1e25e48813b4d51d17f29d2e4f89"></span>std::string <code class="descname">sentence</code><a class="headerlink" href="#_CPPv2N6quotek3nlp8relation8sentenceE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initial sentence, extracted from text. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek3nlp6actionE">
+<span id="quotek::nlp::action"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1action"></span><em class="property">struct </em><code class="descclassname">quotek::nlp::</code><code class="descname">action</code><a class="headerlink" href="#_CPPv2N6quotek3nlp6actionE" title="Permalink to this definition">¶</a></dt>
+<dd><p>action struct is meant to store detected action for a sentence. Action is composed of 3 components, text (verb) , tense, and negated (if verb is used in its negative form). </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp6action4textE">
+<span id="quotek::nlp::action::text__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1action_1ade96f829cbe401f5baac51bbff711873"></span>std::string <code class="descname">text</code><a class="headerlink" href="#_CPPv2N6quotek3nlp6action4textE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the verb. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp6action5tenseE">
+<span id="quotek::nlp::action::tense__ss"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1action_1a43bd6beaca92ba16b0489eb5d1ec9a00"></span>std::string <code class="descname">tense</code><a class="headerlink" href="#_CPPv2N6quotek3nlp6action5tenseE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the verb tense. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek3nlp6action7negatedE">
+<span id="quotek::nlp::action::negated__b"></span><span class="target" id="quotekstructquotek_1_1nlp_1_1action_1aee8e227cfccf76f663a6652903e9d423"></span>bool <code class="descname">negated</code><a class="headerlink" href="#_CPPv2N6quotek3nlp6action7negatedE" title="Permalink to this definition">¶</a></dt>
+<dd><p>tells if verb is used in negative form. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

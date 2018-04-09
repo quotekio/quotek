@@ -1,0 +1,345 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSV Importer</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quandl.html">Quandl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etoro.html">eToro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo.html">Yahoo! Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rss.html">RSS Feeds</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="csv-importer">
+<h1>CSV Importer<a class="headerlink" href="#csv-importer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource3csvE">
+<span id="quotek::datasource::csv"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">csv</code><a class="headerlink" href="#_CPPv2N6quotek10datasource3csvE" title="Permalink to this definition">¶</a></dt>
+<dd><p>csv is a class that helps importing financial data stored in CSV files. it has multiple import features depending on what user wants to achieve. </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv3csvENSt6stringEc">
+<span id="quotek::datasource::csv::csv__ss.c"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1ab114dd677247efd99ad5211091f2a536"></span><code class="descname">csv</code><span class="sig-paren">(</span>std::string <em>source_file</em>, char <em>separator</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv3csvENSt6stringEc" title="Permalink to this definition">¶</a></dt>
+<dd><p>csv class constructor . <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">source_file</span></code> - <p>Source of the CSV file, under the form scheme://path_to_csv. Scheme can be either: *file:// , for local csv files. *http:// , for remote, csv files that can be fetched over http. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">separator</span></code> - <p>string that tells what is the columns separator in the csv. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csvD0Ev">
+<span id="quotek::datasource::csv::~csv"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a4242af2818bb678800f1142c40f0894c"></span><code class="descname">~csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csvD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>rss class destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv11from_stringENSt6stringE">
+<span id="quotek::datasource::csv::from_string__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1aaa7a7c16ff98ea4c3d3e31a9a030b2e6"></span>void <code class="descname">from_string</code><span class="sig-paren">(</span>std::string <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv11from_stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>from_string loads csv data from string instead of file. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">content</span></code> - <p>csv string content. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv13setTimeColumnEiNSt6stringE">
+<span id="quotek::datasource::csv::setTimeColumn__i.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a88305b3817e13c9ada2db8c228b3dd4c"></span>void <code class="descname">setTimeColumn</code><span class="sig-paren">(</span>int <em>dt_colnum</em>, std::string <em>dt_format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv13setTimeColumnEiNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function allows to tell which column in the csv contains the date/time data (if one exists), and which format it is. The format follows the usual UNIX date() format expression. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">dt_colnum</span></code> - <p>integer telling which column in the csv contains datatime data. It is zero-starting, meaning that first column is 0, second is 1, etc.. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">dt_format</span></code> - <p>date string format, essential for date parsing. For example &#8220;%Y-%m-%d %H:%M:%S&#8221; as date format means the csv contains dates like &#8220;2015-09-15 16:00:00&#8221;. If the time format in the CSV is an epoch timestamp, just put &#8220;%s&#8221; in it. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv9setOffsetEi">
+<span id="quotek::datasource::csv::setOffset__i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a59489f6de158210874734a8117a6f38a"></span>void <code class="descname">setOffset</code><span class="sig-paren">(</span>int <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv9setOffsetEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a line offset at which to start importing data. Can be useful for very large CSV files for which user only wants a part. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">offset</span></code> - <p>integer representing the line of the csv file to start at. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv9addFilterENSt6stringE">
+<span id="quotek::datasource::csv::addFilter__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a20fa39820aef77cca90b47080f7552ac"></span>void <code class="descname">addFilter</code><span class="sig-paren">(</span>std::string <em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv9addFilterENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new line filter to the instanciated csv object. A line filter allows to take only the CSV lines that match the filter. filters must be provided as regular expression strings for later compilation. See the c++ &lt;regex&gt; documentation for further infos about how to use them. 
+Note about the filters list: filters add each other (boolean AND), so if you want to perform OR operations, you will have to put them in a single regex. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">filter</span></code> - <p>regex string to provide for filtering.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv12clearFiltersEv">
+<span id="quotek::datasource::csv::clearFilters"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a86e5b9d1aa2248abf68002600bc1b4fa"></span>void <code class="descname">clearFilters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv12clearFiltersEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>clears all the previously added filters of the instanciated csv object. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv10getFiltersEv">
+<span id="quotek::datasource::csv::getFilters"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1ac07ebdd1214d2f5b4f4475135a397a76"></span>std::vector&lt;std::string&gt; <code class="descname">getFilters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv10getFiltersEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the list of CSV filters of the instanciated csv object. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>list of the csv filters, with the form of a vector. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv14import_recordsEii">
+<span id="quotek::datasource::csv::import_records__i.i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1abffc4a40a564c5cb7883884075d8125a"></span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">import_records</code><span class="sig-paren">(</span>int <em>nb_records</em>, int <em>value_colnum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv14import_recordsEii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports data in the source csv as quotek records. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a <a class="reference internal" href="records.html#quotekclassquotek_1_1data_1_1records"><span>quotek::data::records</span></a> container. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">nb_records</span></code> - <p>Sets the maximum size of lines to import, if user wants to import only a part of the data nb_records = 0 means import all. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value_colnum</span></code> - <p>Tells which column to take record value from. It is zero-starting, meaning that first column is 0, second is 1, etc.. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3csv14import_historyEiiiii">
+<span id="quotek::datasource::csv::import_history__i.i.i.i.i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1csv_1a55fd650bcd85e03eba62922a7e98496b"></span>std::vector&lt;quotek::data::<a class="reference internal" href="history.html#_CPPv2N6quotek4data7historyE" title="quotek::data::history">history</a>&gt; <code class="descname">import_history</code><span class="sig-paren">(</span>int <em>nb_lines</em>, int <em>open_colnum</em>, int <em>high_colnum</em>, int <em>low_colnum</em>, int <em>close_colnum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3csv14import_historyEiiiii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports data in the source csv as a vector of quotek history objects. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of <a class="reference internal" href="history.html#quotekclassquotek_1_1data_1_1history"><span>quotek::data::history</span></a> objects. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">nb_lines</span></code> - <p>maximum number of history lines the user wants to import. 0 means import all. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">open_column</span></code> - <p>zero-starting index of the column containing the open value. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">high_colnum</span></code> - <p>zero-starting index of the column containing the high value. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">low_colnum</span></code> - <p>zero-starting index of the column containing the low value. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">close_colnum</span></code> - <p>zero-starting index of the column containing the close value. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, we will assume that we have a csv file called &#8220;dow_values.csv&#8221; with the following content:</p>
+<div class="line-block">
+<div class="line">#DATE, #CLOSING_VALUE</div>
+<div class="line">2016-08-01, 17590.1</div>
+<div class="line">2016-08-02, 17640.5</div>
+<div class="line">2016-08-03, 17610.2</div>
+<div class="line">2016-08-04, 17580.7</div>
+</div>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/csv.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//We declare a new csv object.</span>
+  <span class="n">csv</span> <span class="n">csv1</span><span class="p">(</span><span class="s">&quot;file://./dow_values.csv&quot;</span><span class="p">,</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
+
+  <span class="c1">//We skip the first header line.</span>
+  <span class="n">csv1</span><span class="p">.</span><span class="n">setOffset</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="c1">//We import the four lines of data using column 1 of the csv file</span>
+  <span class="n">records</span> <span class="n">r1_dow</span> <span class="o">=</span> <span class="n">csv1</span><span class="p">.</span><span class="n">import_records</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="c1">//We check that we got some data in r1_dow.</span>
+  <span class="n">assert</span><span class="p">(</span> <span class="n">r1_dow</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+
+  <span class="c1">//We check that it did import the correct data</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;DOW FIRSTVAL:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">r1_dow</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

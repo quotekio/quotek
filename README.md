@@ -64,6 +64,46 @@ If you don't see anything happen, you can troubleshoot by:
   * Trying to start the engine manually, by running ```/etc/init.d/quotek startfg``` from the server's command prompt.
 
 
+How to Write Trading Strategies
+-------------------------------
+
+In order to write a new strategy, go to Strategies, then click on the "+" button at the top right of the screen. A code editor should open, then you can start writing your code. The initial code looks like this:
+
+```
+class newstrat: public strategy {
+  public:
+
+    quotek::broker* br0;
+                  
+    int initialize() {
+
+      //put your init code here
+
+      br0 = new quotek::broker(this);
+      return 0;
+
+    }
+
+    void evaluate() {
+
+      //put your evaluation code here
+
+    }
+};
+```
+
+Each strategy must be contained in a specific class inheriting from the strategy class. 
+
+Here are some basic principles to keep in mind:
+
+  1. initialize() is run every time the strategy is instanciated.
+  2. evaluate() is run at every market data tick, this is mainly where you put your algo. 
+  3. br0 is the broker object handler, through it you take and close positions.
+  4. if you dont want to run evaluate on every tick, you can create a counter property and exec the code inside for some counter value.
+
+To know which functions/analysis you can directly use in your strategies, i suggest you to read the SDK Documentation (available in sdk_doc of the following repository)
+
+
 DISCLAIMER
 ----------
 

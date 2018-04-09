@@ -1,0 +1,221 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>RSS Feeds</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quandl.html">Quandl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etoro.html">eToro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo.html">Yahoo! Finance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">RSS Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="rss-feeds">
+<h1>RSS Feeds<a class="headerlink" href="#rss-feeds" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource3rssE">
+<span id="quotek::datasource::rss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1rss"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">rss</code><a class="headerlink" href="#_CPPv2N6quotek10datasource3rssE" title="Permalink to this definition">¶</a></dt>
+<dd><p>rss is a class which allows to fetch rss feeds inside quotek strategies in order to process them (and potentially dedude positions to take). </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3rss3rssENSt6stringE">
+<span id="quotek::datasource::rss::rss__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1rss_1a530edc7c1c1ed1000e35a8f72442f607"></span><code class="descname">rss</code><span class="sig-paren">(</span>std::string <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3rss3rssENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>rss class constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3rssD0Ev">
+<span id="quotek::datasource::rss::~rss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1rss_1a33918d0fe807d880c228d331973e8324"></span><code class="descname">~rss</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3rssD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>rss class destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource3rss5fetchEi">
+<span id="quotek::datasource::rss::fetch__i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1rss_1a34b156ab135fd4244eac645fe69251d7"></span>std::vector&lt;quotek::data::<a class="reference internal" href="news.html#_CPPv2N6quotek4data4newsE" title="quotek::data::news">news</a>&gt; <code class="descname">fetch</code><span class="sig-paren">(</span>int <em>nb_news</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource3rss5fetchEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>fetches the the RSS stream passed inside the RSS object constructor. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of quotek news objects. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">nb_news</span></code> - <p>The number of news to fetch (sorted by descending date) </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>You will find below a sample source code about how to use the Quotek RSS client to fetch
+news from wall-street journal Market RSS feed <a href="#id1"><span class="problematic" id="id2">*</span></a>/</p>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/rss.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//We declare a new rss client.</span>
+  <span class="n">rss</span> <span class="n">r1</span><span class="p">(</span><span class="s">&quot;http://www.wsj.com/xml/rss/3_7031.xml&quot;</span><span class="p">);</span>
+
+  <span class="c1">//we fetch the last five news of the feed.</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">news</span><span class="o">&gt;</span> <span class="n">nvect</span> <span class="o">=</span> <span class="n">r1</span><span class="p">.</span><span class="n">fetch</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+  <span class="c1">//Then we iterate through them to display their content on stdout.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nvect</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nvect</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">content</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

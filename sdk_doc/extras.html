@@ -1,0 +1,521 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Extras</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Extras</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="extras">
+<h1>Extras<a class="headerlink" href="#extras" title="Permalink to this headline">¶</a></h1>
+<a class="qimg reference internal image-reference" href="_images/toy.png"><img alt="Extras image" class="qimg align-left" src="_images/toy.png" style="width: 150px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>In this section you will find the documentation for everything that is not directly related to
+algotrading but that is also offered by the Quotek SDK.</p>
+<div class="section" id="time-functions">
+<h2>Time Functions<a class="headerlink" href="#time-functions" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">As the name suggests, these are all the function related to the manipulation of time data.</div>
+<div class="line"><br /></div>
+<div class="line">Note about time functions: For most of them, user has to provide the current</div>
+<div class="line">timestamp instead of just having an internal time(0) call inside. It is because these functions</div>
+<div class="line">must support backtesting, which implies decorelated real time and backtest time.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">SaaS Users: To use these functions, all you have to do is to call them this-&gt;t as timestamp argument, eg: is_time(&#8220;10:00&#8221;, this-&gt;t);</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time7timestrEl">
+<span id="quotek::core::time::timestr__l"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1a71d1f621d6dbbdcff164a3ab6ca93bfc"></span>std::string <code class="descclassname">quotek::core::time::</code><code class="descname">timestr</code><span class="sig-paren">(</span>long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time7timestrEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>timestr takes an epoch timestamp and returns an &#8220;HH:MM:SS&#8221; string corresponding. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>hour string with the form &#8220;HH:MM:SS&#8221; </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">timestamp</span></code> - <p>epoch timestamp to get hour string from. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time7timeintEl">
+<span id="quotek::core::time::timeint__l"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1a95046ee16da720acec5169aa9a39ddf7"></span>std::vector&lt;int&gt; <code class="descclassname">quotek::core::time::</code><code class="descname">timeint</code><span class="sig-paren">(</span>long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time7timeintEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>timeint takes an epoch timestamp and returns a vector of int representing the hours, minutes and seconds of timestamp. vect[0] is hours, vect[1] is minutes, vect[2] is seconds <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>an int vector of 3 elements. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">timestamp</span></code> - <p>epoch timestamp to get time ints from. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time7is_timeENSt6stringEl">
+<span id="quotek::core::time::is_time__ss.l"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1ad20bd987b9b60564434f76b19e568541"></span>bool <code class="descclassname">quotek::core::time::</code><code class="descname">is_time</code><span class="sig-paren">(</span>std::string <em>time_string</em>, long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time7is_timeENSt6stringEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>is_time tells if a time string matches with the epoch timestamp provided as an argument. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true if time_string is current time, false otherwise. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">time_string</span></code> - <p>string representing time, can be under the form &#8220;HH:MM:SS&#8221; or &#8220;HH:MM&#8221; </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time8week_dayEl">
+<span id="quotek::core::time::week_day__l"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1a1407373e68ed1dc91e88330e7bf08f6a"></span>std::string <code class="descclassname">quotek::core::time::</code><code class="descname">week_day</code><span class="sig-paren">(</span>long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time8week_dayEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>week_day returns the long day name according to a provided epoch timestamp. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>day of week as a string (&#8220;monday&#8221; or &#8220;tuesday&#8221;, etc..) </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">timestamp</span></code> - <p>epoch timestamp </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time9month_dayEl">
+<span id="quotek::core::time::month_day__l"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1a98b9dbec565898253519344bc0b9f95f"></span>int <code class="descclassname">quotek::core::time::</code><code class="descname">month_day</code><span class="sig-paren">(</span>long <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time9month_dayEl" title="Permalink to this definition">¶</a></dt>
+<dd><p>month_day provids the number of the day of the month according to provided timestamp. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core4time7datestrENSt6time_tENSt6stringE">
+<span id="quotek::core::time::datestr__std::time_t.ss"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1time_1a9d6200c11bb3aa4b1502dbdc2c9a8452"></span>std::string <code class="descclassname">quotek::core::time::</code><code class="descname">datestr</code><span class="sig-paren">(</span>std::time_t <em>timestamp</em>, std::string <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core4time7datestrENSt6time_tENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#quoteknamespacequotek_1_1core_1_1time_1a9d6200c11bb3aa4b1502dbdc2c9a8452"><span>datestr()</span></a> converts an epoch timestamp to the corresponding date string, given a user-defined format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the date string of the timestamp provided as argument. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">timestamp</span></code> - <p>epoch timestamp to convert to date string. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>format of the date string, following the usual date formatting (&#8220;%Y-%m-%d %H:%M:%S&#8221;) </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="string-functions">
+<h2>String Functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h2>
+<p>String functions are extending the set of C++ string manipulators, So that the users of the Quotek SDK doesn&#8217;t have to code them.</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek4core5utils5splitERKNSt6stringEc">
+<span id="quotek::core::utils::split__ssCR.c"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1utils_1a11ed0bafb524dfcf18cf7a177e51c40c"></span>std::vector&lt;std::string&gt; <code class="descclassname">quotek::core::utils::</code><code class="descname">split</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>s</em>, char <em>delim</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core5utils5splitERKNSt6stringEc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits a string into multiple parts, given a delimiter character. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of strings containing the splitted parts of the string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">s</span></code> - <p>String to split. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">delim</span></code> - <p>Delimiter character. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core5utils8tokeniseERNSt6stringE">
+<span id="quotek::core::utils::tokenise__ssCR"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1utils_1a1dfb7b9b3df9238f8579fed029f8b267"></span>std::vector&lt;std::string&gt; <code class="descclassname">quotek::core::utils::</code><code class="descname">tokenise</code><span class="sig-paren">(</span>std::string <em class="property">const</em> &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core5utils8tokeniseERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tokenise a string by making use of C++ std::istream_iterator. It is useful to split the words inside a sentence, for instance. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of strings containing the tokens. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">s</span></code> - <p>String to tokenise. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core5utils5ltrimERNSt6stringE">
+<span id="quotek::core::utils::ltrim__ssR"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1utils_1a819866491754b11ec433b146be0226f1"></span>std::string &amp;<code class="descclassname">quotek::core::utils::</code><code class="descname">ltrim</code><span class="sig-paren">(</span>std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core5utils5ltrimERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the non-alphanum characters at the left of a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the left-trimed string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">s</span></code> - <p>String to left-trim. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core5utils5rtrimERNSt6stringE">
+<span id="quotek::core::utils::rtrim__ssR"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1utils_1ae1652dc7b205f4e309d9b6a472b89c22"></span>std::string &amp;<code class="descclassname">quotek::core::utils::</code><code class="descname">rtrim</code><span class="sig-paren">(</span>std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core5utils5rtrimERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the non-alphanum characters at the right of a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the right-trimed string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">s</span></code> - <p>String to right-trim. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4core5utils4trimERNSt6stringE">
+<span id="quotek::core::utils::trim__ssR"></span><span class="target" id="quoteknamespacequotek_1_1core_1_1utils_1a82f97c02e56dcb9b958300fb39c52ff7"></span>std::string &amp;<code class="descclassname">quotek::core::utils::</code><code class="descname">trim</code><span class="sig-paren">(</span>std::string &amp;<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4core5utils4trimERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the non-alphanum characters at both ends of a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the trimed string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">s</span></code> - <p>String to trim. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="http">
+<h2>HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h2>
+<p>The HTTP Class allows the users of the Quotek SDK to perform raw HTTP queries and fetch their result.</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek4httpE">
+<span id="quotek::http"></span><span class="target" id="quotekclassquotek_1_1http"></span><em class="property">class </em><code class="descclassname">quotek::</code><code class="descname">http</code><a class="headerlink" href="#_CPPv2N6quotek4httpE" title="Permalink to this definition">¶</a></dt>
+<dd><p>HTTP is a simple HTTP client that will allow your strategies to remotely fetch data. Also note that this class supports https. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek4http4httpEv">
+<span id="quotek::http::http"></span><span class="target" id="quotekclassquotek_1_1http_1ad86f0ff523725e743e716e4a161e1c67"></span><code class="descname">http</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http4httpEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>http class constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4httpD0Ev">
+<span id="quotek::http::~http"></span><span class="target" id="quotekclassquotek_1_1http_1afb0f98370dc3dfccc8cea7ba4718667b"></span><code class="descname">~http</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4httpD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>http class destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http7destroyEv">
+<span id="quotek::http::destroy"></span><span class="target" id="quotekclassquotek_1_1http_1ab86f71899e35942e7fe44a60ef20a740"></span>void <code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http7destroyEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>alternative destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http3getENSt6stringE">
+<span id="quotek::http::get__ss"></span><span class="target" id="quotekclassquotek_1_1http_1abd20aeedfa6b86a8bd880528b97d6ded"></span>std::string <code class="descname">get</code><span class="sig-paren">(</span>std::string <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http3getENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an HTTP GET QUERY on provided URL and returns result as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the HTTP server response, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">url</span></code> - <p>HTTP URL to perform query on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http3getENSt6stringERNSt3mapINSt6stringENSt6stringEEE">
+<span id="quotek::http::get__ss.std::map:ss.ss:R"></span><span class="target" id="quotekclassquotek_1_1http_1a32b3e2b01dab214f440f02a8712e65a2"></span>std::string <code class="descname">get</code><span class="sig-paren">(</span>std::string <em>url</em>, std::map&lt;std::string, std::string&gt; &amp;<em>get_params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http3getENSt6stringERNSt3mapINSt6stringENSt6stringEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an HTTP GET QUERY on provided URL with provided params, and returns result as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the HTTP server response, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">url</span></code> - <p>HTTP URL to perform query on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">get_params</span></code> - <p>key/values map corresponding to paramter/value. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http4postENSt6stringERNSt6stringE">
+<span id="quotek::http::post__ss.ssR"></span><span class="target" id="quotekclassquotek_1_1http_1a53b9c8f94e6eee868854da01a2a0fdf9"></span>std::string <code class="descname">post</code><span class="sig-paren">(</span>std::string <em>url</em>, std::string &amp;<em>post_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http4postENSt6stringERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an HTTP POST query on provided URL and returns result as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the HTTP server response, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">url</span></code> - <p>HTTP URL to perform query on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">post_data</span></code> - <p>POST data string having the form &#8220;field1=data2&amp;field2=data2..&amp;fieldn=datan&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http4postENSt6stringERNSt3mapINSt6stringENSt6stringEEE">
+<span id="quotek::http::post__ss.std::map:ss.ss:R"></span><span class="target" id="quotekclassquotek_1_1http_1a504211acba7c50727cb0ba81fea0ee17"></span>std::string <code class="descname">post</code><span class="sig-paren">(</span>std::string <em>url</em>, std::map&lt;std::string, std::string&gt; &amp;<em>post_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http4postENSt6stringERNSt3mapINSt6stringENSt6stringEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an HTTP POST query on provided URL and returns result as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the HTTP server response, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">url</span></code> - <p>HTTP URL to perform query on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">post_data</span></code> - <p>std::map containing the post data (eg post_data[&#8220;name&#8221;] = &#8220;john&#8221; will send &#8220;name=john&#8221; as POST data). </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http3delENSt6stringE">
+<span id="quotek::http::del__ss"></span><span class="target" id="quotekclassquotek_1_1http_1a5ce193f1145b1a99f46308992ea231c6"></span>std::string <code class="descname">del</code><span class="sig-paren">(</span>std::string <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http3delENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an HTTP DELETE QUERY on provided URL and returns result as a string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the HTTP server response, as a string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">url</span></code> - <p>HTTP URL to perform query on. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http10add_headerENSt6stringE">
+<span id="quotek::http::add_header__ss"></span><span class="target" id="quotekclassquotek_1_1http_1a3c003bcd21c87695a3dbd3998dfc3d76"></span>void <code class="descname">add_header</code><span class="sig-paren">(</span>std::string <em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http10add_headerENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an header value prior to an HTTP request. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">header</span></code> - <p>header data to add. Header string is usually of the form: &#8220;Header_name: Value&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4http6escapeENSt6stringE">
+<span id="quotek::http::escape__ss"></span><span class="target" id="quotekclassquotek_1_1http_1a2381108c65422507dc0011d6a0692d66"></span>std::string <code class="descname">escape</code><span class="sig-paren">(</span>std::string <em>to_escape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4http6escapeENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escapes characters in a string to pass it as a valid URL/ post data. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>HTTP Escaped string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">to_escape</span></code> - <p>String to escape. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek4http2chE">
+<span id="quotek::http::ch__CURLP"></span><span class="target" id="quotekclassquotek_1_1http_1a14c5ca9fc023792fab01b62f16d74d3a"></span>CURL *<code class="descname">ch</code><a class="headerlink" href="#_CPPv2N6quotek4http2chE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal curl object handler. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4http7headersE">
+<span id="quotek::http::headers__curl_slistP"></span><span class="target" id="quotekclassquotek_1_1http_1a3d6fd00647c393fee25657a61a8fe5d5"></span><em class="property">struct</em> curl_slist *<code class="descname">headers</code><a class="headerlink" href="#_CPPv2N6quotek4http7headersE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal headers list. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

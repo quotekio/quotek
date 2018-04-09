@@ -1,0 +1,354 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>eToro</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quandl.html">Quandl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">eToro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo.html">Yahoo! Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rss.html">RSS Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="etoro">
+<h1>eToro<a class="headerlink" href="#etoro" title="Permalink to this headline">¶</a></h1>
+<a class="qimg reference internal image-reference" href="_images/etoro-logo.png"><img alt="eToro Logo" class="qimg align-left" src="_images/etoro-logo.png" style="width: 100px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>The following section is the documentation of the Quotek SDK eToro OpenBook API Client.</p>
+<p>eToro is the biggest social trading platform, and this client will allow you to enrich your trading algorithms with copy-trade functionalities.</p>
+<p>You can for instance fetch the list of the most successul traders on the platform and get their open positions to correlate them with your own trading signals and indicators.</p>
+<p>The eToro Client is also able to give you the market sentiment of the traders on the platform for a large amount of assets, using the insight() function.</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource5etoroE">
+<span id="quotek::datasource::etoro"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">etoro</code><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoroE" title="Permalink to this definition">¶</a></dt>
+<dd><p>etoro is a class meant to make easy queries to the eToro OpenBook API. </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro5etoroEv">
+<span id="quotek::datasource::etoro::etoro"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1a89aef7e4a3a31910864269bfa56e8145"></span><code class="descname">etoro</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro5etoroEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class Constructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoroD0Ev">
+<span id="quotek::datasource::etoro::~etoro"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1a35cf1b4cbe77a02f36d5caca50c10baf"></span><code class="descname">~etoro</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoroD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class Destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro7rankingEiNSt6stringENSt6stringE">
+<span id="quotek::datasource::etoro::ranking__i.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1aa78eff755a6c3332c4753eafa26da54f"></span>std::vector&lt;quotek::datasource::<a class="reference internal" href="#_CPPv2N6quotek10datasource8eto_userE" title="quotek::datasource::eto_user">eto_user</a>&gt; <code class="descname">ranking</code><span class="sig-paren">(</span>int <em>period</em>, std::string <em>risk_level</em>, std::string <em>sort_type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro7rankingEiNSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a ranking of the eToro users given specific parameters. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list of eto_users. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">period</span></code> - <p>Time period in days, for which you want to get the ranking. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">risk_level</span></code> - <p>Tells for which kind of risk profile you want the ranking. risk_level can be &#8220;Low&#8221;, &#8220;Medium&#8221; or &#8220;High&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">sort_type</span></code> - <p>Tells how you want to sort the users list sorted. Can be &#8220;Copiers&#8221; or &#8220;Gain&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro3topEv">
+<span id="quotek::datasource::etoro::top"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1a54164aa6fab4336187b6c85bf3dfbccd"></span>std::vector&lt;std::vector&lt;quotek::datasource::<a class="reference internal" href="#_CPPv2N6quotek10datasource8eto_userE" title="quotek::datasource::eto_user">eto_user</a>&gt;&gt; <code class="descname">top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro3topEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>A little like <a class="reference internal" href="#quotekclassquotek_1_1datasource_1_1etoro_1aa78eff755a6c3332c4753eafa26da54f"><span>ranking()</span></a>, top returns the list of the 5 first eToro users that perfomed the most by copiers on 3 , 6 and 12 months period of time. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a 3 elements vector of ranked users vectors </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro9positionsENSt6stringENSt6stringENSt6stringE">
+<span id="quotek::datasource::etoro::positions__ss.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1a68821ea4dd6b42e29e9927bc90e6ef13"></span>std::vector&lt;quotek::core::position&gt; <code class="descname">positions</code><span class="sig-paren">(</span>std::string <em>username</em>, std::string <em>pos_type</em>, std::string <em>pos_time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro9positionsENSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the eToro portolio of an user, given his/her username and extra parameters. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The user&#8217;s portfolio, under the form of vector of quotek position objects. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">username</span></code> - <p>User Name of the user you want to get the portfolio for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">pos_type</span></code> - <p>Type of positions you want to retrieve. pos_type can be &#8220;Real&#8221; or &#8220;Demo&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">pos_time</span></code> - <p>Tells if you to get current or historical positions. pos_time can be &#8220;Current&#8221; or &#8220;History&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro7symbolsENSt6stringE">
+<span id="quotek::datasource::etoro::symbols__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1aa871889be7d121c461c56e2e7868a1c8"></span>std::vector&lt;std::string&gt; <code class="descname">symbols</code><span class="sig-paren">(</span>std::string <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro7symbolsENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Symbols fetch the full list of eToro symbols for a given market category. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the list of symbols for the given market. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">category</span></code> - <p>Market Category we want to get symbols for. Can be either &#8220;currencies&#8221;, &#8220;commodities&#8221;, &#8220;indices&#8221; and &#8220;stocks&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource5etoro7insightENSt6stringENSt6stringE">
+<span id="quotek::datasource::etoro::insight__ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1etoro_1af9c8489a03abbb391941b7195b1bd218"></span>std::vector&lt;float&gt; <code class="descname">insight</code><span class="sig-paren">(</span>std::string <em>symbol</em>, std::string <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource5etoro7insightENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>insight is a function returning the long/short ratio of the eToro users positions for a given market. If open positions on GOLD are 70% long and 30% short, then the result of insight(&#8220;Gold&#8221;,&#8221;commodities&#8221;) will be (70,30).</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a 2-elements vector of float number containing both the long ratio and the short ratio. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">symbol</span></code> - <p>symbol of the market we want insight for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">category</span></code> - <p>Market Category the symbol is in. Can be either &#8220;currencies&#8221;, &#8220;commodities&#8221;, &#8220;indices&#8221; and &#8220;stocks&#8221;. If you want insight for symbol &#8220;Gold&#8221; then category will be &#8220;commodities&#8221;, for &#8220;EUR/USD&#8221; it will be &#8220;currentcies&#8221;, etc..</p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource8eto_userE">
+<span id="quotek::datasource::eto_user"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">eto_user</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_userE" title="Permalink to this definition">¶</a></dt>
+<dd><div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user8usernameE">
+<span id="quotek::datasource::eto_user::username__ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a9ebd12aa43545cf3d667bbfd777f4b7e"></span>std::string <code class="descname">username</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user8usernameE" title="Permalink to this definition">¶</a></dt>
+<dd><p>user name. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user12max_drawdownE">
+<span id="quotek::datasource::eto_user::max_drawdown__float"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a55d63f2a7df2aacdf7b73b7cd1113603"></span>float <code class="descname">max_drawdown</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user12max_drawdownE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum drawdown. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user7copiersE">
+<span id="quotek::datasource::eto_user::copiers__i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a28de1f1d4f32452e799de5819a3536d8"></span>int <code class="descname">copiers</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user7copiersE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of copiers follwing the user. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user4gainE">
+<span id="quotek::datasource::eto_user::gain__float"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a6d132dedf4ecbcce830612cfc49dfb0f"></span>float <code class="descname">gain</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user4gainE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of gain/losses in percents </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user16profitable_weeksE">
+<span id="quotek::datasource::eto_user::profitable_weeks__float"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a009c5d357b3475008ae3583b28e47270"></span>float <code class="descname">profitable_weeks</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user16profitable_weeksE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of weeks the user was in profit. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek10datasource8eto_user4rankE">
+<span id="quotek::datasource::eto_user::rank__i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1eto__user_1a5f117c231173e9297c52b38b00cafd6d"></span>int <code class="descname">rank</code><a class="headerlink" href="#_CPPv2N6quotek10datasource8eto_user4rankE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rank of the user </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>You will find below and sample source code about how to use the Quotek&#8217;s eToro OpenBook client.</p>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/etoro.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//creates a new etoro object</span>
+  <span class="n">etoro</span> <span class="n">et1</span><span class="p">;</span>
+
+  <span class="cm">/* Fetches the list of the most succesful traders for the last</span>
+<span class="cm">  30 days and which use medium risk strategies. */</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">eto_user</span><span class="o">&gt;</span> <span class="n">e_users</span> <span class="o">=</span> <span class="n">et1</span><span class="p">.</span><span class="n">ranking</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s">&quot;Medium&quot;</span><span class="p">,</span><span class="s">&quot;Gain&quot;</span><span class="p">);</span>
+
+  <span class="cm">/* Then prints their respective usernames and gains */</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span> <span class="n">e_users</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e_users</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">username</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e_users</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gain</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* Now we will get the trader&#39;s insight for the Gold asset. */</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">gsent</span> <span class="o">=</span> <span class="n">et1</span><span class="p">.</span><span class="n">insight</span><span class="p">(</span><span class="s">&quot;Gold&quot;</span><span class="p">,</span><span class="s">&quot;commodities&quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;GOLD LONG/SHORT RATIO:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">gsent</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">gsent</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

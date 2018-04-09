@@ -1,0 +1,228 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Install</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Quick Start</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firstcode.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="further.html">Going Further</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy.html">The Strategy Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>Using Quotek SDK in your C++ code is fairy easy, since it only consists of a library and header files.
+Please note that if you&#8217;re using our Quotek SaaS solution, this section doesn&#8217;t concern
+you because everything is already setup for you inside your server environment.</p>
+<div class="section" id="windows-install">
+<h2>Windows Install<a class="headerlink" href="#windows-install" title="Permalink to this headline">¶</a></h2>
+<a class="qimg reference internal image-reference" href="_images/windows.png"><img alt="Windows Logo." class="qimg align-left" src="_images/windows.png" style="width: 120px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Download and unzip the quotek SDK archive file. Then right-click on the &#8220;installer_win64.bat&#8221; script
+file which is located at the root of the decompressed directory, then finally click on &#8220;Run as Administrator&#8221;. The SDK will be installed in
+<strong>C:\Program Files\quotek\sdk</strong>, and ready to go.</p>
+<div class="section" id="visual-studio-setup">
+<h3>Visual Studio Setup<a class="headerlink" href="#visual-studio-setup" title="Permalink to this headline">¶</a></h3>
+<a class="qimg reference internal image-reference" href="_images/vstudio.png"><img alt="MSVC Logo." class="qimg align-left" src="_images/vstudio.png" style="width: 80px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Just go to <strong>C:\Program Files\quotek\sdk\helpers\vstudio</strong>,
+then double click on the &#8220;Quotek.vsix&#8221; file. The SDK should now be installed with Visual Studio.
+If you start a new Project and go to &#8220;Visual C++&#8221; , you will see Quotek Project. Then Select it and
+start a new project: It&#8217;s all good, you are now ready to code with quotek.</p>
+</div>
+</div>
+<div class="section" id="linux-install">
+<h2>Linux Install<a class="headerlink" href="#linux-install" title="Permalink to this headline">¶</a></h2>
+<a class="qimg reference internal image-reference" href="_images/linux.png"><img alt="Linux Logo." class="qimg align-left" src="_images/linux.png" style="width: 120px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Download and unzip the quotek SDK archive file, and launch the &#8220;installer_linux.sh&#8221; script
+located at the root of the decompressed directory. All of the Quotek SDK will then be installed
+in /opt/quotek/sdk. The libraries are located in <strong>/opt/quotek/sdk/lib</strong> and headers are in <strong>/opt/quotek/sdk/include</strong>.</p>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>În order to work properly on Linux, Quotek SDK needs libcurl as a dependency. This is
+a very common package which is probably already installed on your system. In any case,
+the install procedure for libcurl is as follow:</p>
+<p><strong>For Debian/Ubuntu</strong></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libcurl4-openssl-dev</span></code></p>
+<p><strong>For CentOS/Fedora</strong></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">libcurl-devel</span></code></p>
+</div>
+<div class="section" id="building-linking">
+<h3>Building &amp; Linking<a class="headerlink" href="#building-linking" title="Permalink to this headline">¶</a></h3>
+<p>Given that the headers and libraries are not installed at the usual places in the system, you will need to
+add a few arguments to your compilation line. Also, because libquotek needs them, you will need to link the programs you code with libcurl and pthread.</p>
+<p>So the typical compilation line of a program using quotek SDK on Linux is the following:</p>
+<p><code class="docutils literal"><span class="pre">g++</span> <span class="pre">-std=c++11</span> <span class="pre">-I/opt/quotek/include</span> <span class="pre">-L/opt/quotek/lib</span> <span class="pre">-o</span> <span class="pre">&lt;YOUR_PROGRAM&gt;</span> <span class="pre">&lt;YOUR_C++_FILE&gt;</span> <span class="pre">-lpthread</span> <span class="pre">-lcurl</span> <span class="pre">-lquotek</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

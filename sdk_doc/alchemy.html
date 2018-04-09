@@ -1,0 +1,324 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Alchemy API</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="nlp.html">Natural Language Processing</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Alchemy API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nlp_struct.html">NLP Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="alchemy-api">
+<h1>Alchemy API<a class="headerlink" href="#alchemy-api" title="Permalink to this headline">¶</a></h1>
+<a class="qimg reference internal image-reference" href="_images/alchemy-logo.png"><img alt="Alchemy API service Logo." class="qimg align-left" src="_images/alchemy-logo.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>You will find below the documentation of the Quotek Alchemy API client. With it you will be able to
+perform on text content advanced sentiment analysis, categorization or relations finding, these tools being the key factors for accurately analysing financial news. You can register for a free API key at the following URL: <a class="reference external" href="http://www.alchemyapi.com/api/register.html">http://www.alchemyapi.com/api/register.html</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="class">
+<dt id="_CPPv2N6quotek3nlp7alchemyE">
+<span id="quotek::nlp::alchemy"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy"></span><em class="property">class </em><code class="descclassname">quotek::nlp::</code><code class="descname">alchemy</code><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemyE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alchemy is a class which aims to help quotek strategies interract with Alchemy API NLP service. Alchemy API Service contains some very useful functionalities like sentiment analysis, etc..</p>
+<p>Note: Only the API calls which are most useful to algo-trading are added here. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy7alchemyENSt6stringENSt6stringE">
+<span id="quotek::nlp::alchemy::alchemy__ss.ss"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1ad41add952a9770d68e0f02617e0fdef3"></span><code class="descname">alchemy</code><span class="sig-paren">(</span>std::string <em>key</em>, std::string <em>endpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy7alchemyENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>alchemy class constructor. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">key</span></code> - <p>Alchemy API Key. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">host</span></code> - <p>Alchemy host endpoint. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemyD0Ev">
+<span id="quotek::nlp::alchemy::~alchemy"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1a818fcf01ce3961048eb91bdf905777fb"></span><code class="descname">~alchemy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemyD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>alchemy object destructor. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy9sentimentENSt6stringENSt6stringENSt6stringE">
+<span id="quotek::nlp::alchemy::sentiment__ss.ss.ss"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1a935f78028bf0b933873cee0080d490d1"></span>quotek::nlp::<a class="reference internal" href="nlp_struct.html#_CPPv2N6quotek3nlp9sentimentE" title="quotek::nlp::sentiment">sentiment</a> <code class="descname">sentiment</code><span class="sig-paren">(</span>std::string <em>payload</em>, std::string <em>target</em>, std::string <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy9sentimentENSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sentiment Analysis method. The payload text/url passed as argument is sent to the API for further analysis. The detected sentiment is then returned as a <a class="reference internal" href="nlp_struct.html#quotekstructquotek_1_1nlp_1_1sentiment"><span>quotek::nlp::sentiment</span></a> object. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>sentiment of text computed by Alchemy. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">payload</span></code> - <p>Text or URL of text to analyse. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">target</span></code> - <p>tells for which target sentiment must be processed. Target is optional and therefore can be an empty string. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>tells wether payload is text, html, or url. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy9relationsENSt6stringENSt6stringE">
+<span id="quotek::nlp::alchemy::relations__ss.ss"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1ad9b64f3e3481478cae56ada77ee97a9d"></span>std::vector&lt;quotek::nlp::<a class="reference internal" href="nlp_struct.html#_CPPv2N6quotek3nlp8relationE" title="quotek::nlp::relation">relation</a>&gt; <code class="descname">relations</code><span class="sig-paren">(</span>std::string <em>payload</em>, std::string <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy9relationsENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>relations is able to summerize a text and basically return it under a &#8220;Who doest what&#8221; form. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector quotek::nlp::relations </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">payload</span></code> - <p>Text or URL of text to analyse relashionships for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>tells wether payload is text, html, or url. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy8taxonomyENSt6stringENSt6stringE">
+<span id="quotek::nlp::alchemy::taxonomy__ss.ss"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1acc52236e6b3f9984c7eb0a69f488124f"></span>std::vector&lt;quotek::nlp::category&gt; <code class="descname">taxonomy</code><span class="sig-paren">(</span>std::string <em>payload</em>, std::string <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy8taxonomyENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>taxonomy categorizes a text corpus in a pre-existing category-tree. You can get the full category-tree at <a class="reference external" href="http://www.alchemyapi.com/sites/default/files/taxonomyCategories.zip">http://www.alchemyapi.com/sites/default/files/taxonomyCategories.zip</a> <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">payload</span></code> - <p>Text or URL of text to get taxonomy for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>tells wether payload is text, html, or url. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy8languageENSt6stringENSt6stringE">
+<span id="quotek::nlp::alchemy::language__ss.ss"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1a5dd05d5f829aaed4d4d0bba158cb9a37"></span>std::string <code class="descname">language</code><span class="sig-paren">(</span>std::string <em>payload</em>, std::string <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy8languageENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>language function guesses the language used to write the text passed as argument. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Detect Language string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">payload</span></code> - <p>Text or URL of text to analyse. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>tells wether payload is text, html, or url. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek3nlp7alchemy3rawENSt6stringENSt3mapINSt6stringENSt6stringEEE">
+<span id="quotek::nlp::alchemy::raw__ss.std::map:ss.ss:"></span><span class="target" id="quotekclassquotek_1_1nlp_1_1alchemy_1a0a58ebde88f5332124fbc303ed255681"></span>std::string <code class="descname">raw</code><span class="sig-paren">(</span>std::string <em>call</em>, std::map&lt;std::string, std::string&gt; <em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek3nlp7alchemy3rawENSt6stringENSt3mapINSt6stringENSt6stringEEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Since alchemy binding is only partially supported, <a class="reference internal" href="#quotekclassquotek_1_1nlp_1_1alchemy_1a0a58ebde88f5332124fbc303ed255681"><span>raw()</span></a> allows to perform an API call by letting the user choose which call to use and also which parameters to pass it. It will then return the Alchemy server response in raw form (no parsing). 
+Note about API calls: You can find the whole list of Alchemy API Calls and full documentation here: <a class="reference external" href="http://www.alchemyapi.com/api">http://www.alchemyapi.com/api</a> Note about call parameters: You are not required to add apikey in the parameters list, since <a class="reference internal" href="#quotekclassquotek_1_1nlp_1_1alchemy_1a0a58ebde88f5332124fbc303ed255681"><span>raw()</span></a> will append it for you. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>ALchemy server response as raw text.</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">call</span></code> - <p>name of the Alchemy API call (without URI format prefix). </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">parameters</span></code> - <p>POST parameters to send with the call. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>You will find below and sample source code about how to use the alchemy API client for sentiment
+analysis.</p>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/alchemy.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//we declare a text corpus for analysis</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">txt</span> <span class="o">=</span> <span class="s">&quot;Before you knew it, it was an all-out Eastern USD reserve liquidation party, leading some to ask what effect the drawdowns would ultimately have on UST yields because all else equal, FX reserve selling is just QE in reverse.&quot;</span><span class="p">;</span>
+
+  <span class="c1">//We create a new alchemy object</span>
+  <span class="n">alchemy</span> <span class="n">al</span><span class="p">(</span><span class="s">&quot;JSKJS-09304832-SJ0390S&quot;</span><span class="p">);</span>
+
+  <span class="c1">//We ask Alchemy API an sentiment analysis on text txt</span>
+  <span class="n">sentiment</span> <span class="n">sent</span> <span class="o">=</span> <span class="n">al</span><span class="p">.</span><span class="n">sentiment</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span><span class="s">&quot;text&quot;</span><span class="p">);</span>
+
+  <span class="c1">//We display sentiment on standard output.</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;TEXT SENTIMENT:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sent</span><span class="p">.</span><span class="n">sentimentstr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

@@ -1,0 +1,256 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Yahoo! Finance</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quandl.html">Quandl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etoro.html">eToro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">Twitter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Yahoo! Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rss.html">RSS Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="yahoo-finance">
+<h1>Yahoo! Finance<a class="headerlink" href="#yahoo-finance" title="Permalink to this headline">¶</a></h1>
+<a class="qimg reference internal image-reference" href="_images/yahoo_fin.jpg"><img alt="Yahoo Finance Logo" class="qimg align-left" src="_images/yahoo_fin.jpg" style="width: 250px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource12yahoofinanceE">
+<span id="quotek::datasource::yahoofinance"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1yahoofinance"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">yahoofinance</code><a class="headerlink" href="#_CPPv2N6quotek10datasource12yahoofinanceE" title="Permalink to this definition">¶</a></dt>
+<dd><p>yahoofinance is a class which allows to query the Yahoo! Finance API service to fetch historical data on stocks and indices. </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource12yahoofinance12yahoofinanceEv">
+<span id="quotek::datasource::yahoofinance::yahoofinance"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1yahoofinance_1a7d08a4ed1a174d19078beea3250912a7"></span><code class="descname">yahoofinance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource12yahoofinance12yahoofinanceEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>yahoofinance class constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource12yahoofinanceD0Ev">
+<span id="quotek::datasource::yahoofinance::~yahoofinance"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1yahoofinance_1a730f7b0c2e4c97b93064a7efd2011802"></span><code class="descname">~yahoofinance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource12yahoofinanceD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>yahoofinance class destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource12yahoofinance7historyENSt6stringENSt6stringENSt6stringE">
+<span id="quotek::datasource::yahoofinance::history__ss.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1yahoofinance_1ab1bc3277a9201eb3fff2298d3a419472"></span>std::vector&lt;quotek::data::<a class="reference internal" href="history.html#_CPPv2N6quotek4data7historyE" title="quotek::data::history">history</a>&gt; <code class="descname">history</code><span class="sig-paren">(</span>std::string <em>symbol</em>, std::string <em>from</em>, std::string <em>to</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource12yahoofinance7historyENSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an asset history under the form of a quotek history vector (open,close,high,low). <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of quotek history records. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">symbol</span></code> - <p>yahoo! symbol for the asset. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">from</span></code> - <p>string-formated date with the format &#8220;YYYY-MM-DD&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">to</span></code> - <p>string-formated date with the format &#8220;YYYY-MM-DD&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource12yahoofinance13close_historyENSt6stringENSt6stringENSt6stringE">
+<span id="quotek::datasource::yahoofinance::close_history__ss.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1yahoofinance_1ac2727ec66f775db24f9af2826c56439d"></span>quotek::data::<a class="reference internal" href="records.html#_CPPv2N6quotek4data7recordsE" title="quotek::data::records">records</a> <code class="descname">close_history</code><span class="sig-paren">(</span>std::string <em>symbol</em>, std::string <em>from</em>, std::string <em>to</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource12yahoofinance13close_historyENSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the closing history of an asset defined by symbol. Compared to history, it is a very convenient function to perform moving average, VAR, etc.. computations. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a quotek records structure containing closing prices as value. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">symbol</span></code> - <p>yahoo! symbol for the asset. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">from</span></code> - <p>string-formated date with the format &#8220;YYYY-MM-DD&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">to</span></code> - <p>string-formated date with the format &#8220;YYYY-MM-DD&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/yahoofinance.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//We declare a new yahoofinance object.</span>
+  <span class="n">yahoofinance</span> <span class="n">yf1</span><span class="p">;</span>
+
+  <span class="c1">//now we will import the DAX EOD data for the first week of July, 2016.</span>
+  <span class="n">records</span> <span class="n">r1_dax</span> <span class="o">=</span> <span class="n">yf1</span><span class="p">.</span><span class="n">close_history</span><span class="p">(</span><span class="s">&quot;^GDAXI&quot;</span><span class="p">,</span><span class="s">&quot;2016-07-01&quot;</span><span class="p">,</span><span class="s">&quot;2016-07-9&quot;</span><span class="p">);</span>
+
+  <span class="c1">//We check that we got some data in r1_dax.</span>
+  <span class="n">assert</span><span class="p">(</span> <span class="n">r1_dax</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

@@ -1,0 +1,212 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>History</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_struct.html">Data Structures</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="record.html">Record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="records.html">Records</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html">News</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="history">
+<h1>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek4data7historyE">
+<span id="quotek::data::history"></span><span class="target" id="quotekclassquotek_1_1data_1_1history"></span><em class="property">class </em><code class="descclassname">quotek::data::</code><code class="descname">history</code><a class="headerlink" href="#_CPPv2N6quotek4data7historyE" title="Permalink to this definition">¶</a></dt>
+<dd><p>history is a container which aims to store historical data of an asset fetched from a remote or local datasource. While <a class="reference internal" href="record.html#quotekclassquotek_1_1data_1_1record"><span>quotek::data::record</span></a> is meant to store raw asset values provided by broker in real-time, history is more about storing historical data having a longer tick, usually the kind of data available from quotes information providers. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7history7historyEv">
+<span id="quotek::data::history::history"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1a1a265f89416947ee54894cef2eaa4c81"></span><code class="descname">history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7history7historyEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>history constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7history7historyElffff">
+<span id="quotek::data::history::history__l.float.float.float.float"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1a2c6f4f00a71a60cf42da69010aab55bd"></span><code class="descname">history</code><span class="sig-paren">(</span>long <em>timestamp</em>, float <em>open</em>, float <em>close</em>, float <em>high</em>, float <em>low</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7history7historyElffff" title="Permalink to this definition">¶</a></dt>
+<dd><p>history constructor 2 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data7historyD0Ev">
+<span id="quotek::data::history::~history"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1a2b3715f27ac627c15d0a715e51411e38"></span><code class="descname">~history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data7historyD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>history destructor </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek4data7history9timestampE">
+<span id="quotek::data::history::timestamp__l"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1ae25bcc7dba40e51d3c67855f993486af"></span>long <code class="descname">timestamp</code><a class="headerlink" href="#_CPPv2N6quotek4data7history9timestampE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the timestamp on which the quotation begun (usually beginning of the day), in epoch format. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data7history4openE">
+<span id="quotek::data::history::open__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1adad3e9aa5ff620e963f196eba91893ce"></span>float <code class="descname">open</code><a class="headerlink" href="#_CPPv2N6quotek4data7history4openE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the opening price of the asset for the period. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data7history5closeE">
+<span id="quotek::data::history::close__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1af9e606405e1b56d7d5fc8e22527e320a"></span>float <code class="descname">close</code><a class="headerlink" href="#_CPPv2N6quotek4data7history5closeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the (non-adjusted) closing price of the asset for the period. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data7history4highE">
+<span id="quotek::data::history::high__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1a3fb4503a9bac51f27842817fcb00c024"></span>float <code class="descname">high</code><a class="headerlink" href="#_CPPv2N6quotek4data7history4highE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the highest price of the asset for the period. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data7history3lowE">
+<span id="quotek::data::history::low__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1history_1a4d4b1a47c7352ed690eb4725b215a88a"></span>float <code class="descname">low</code><a class="headerlink" href="#_CPPv2N6quotek4data7history3lowE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the lowest price of the asset for the period. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

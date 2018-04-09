@@ -1,0 +1,233 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Record</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_struct.html">Data Structures</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="records.html">Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html">News</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="record">
+<h1>Record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek4data6recordE">
+<span id="quotek::data::record"></span><span class="target" id="quotekclassquotek_1_1data_1_1record"></span><em class="property">class </em><code class="descclassname">quotek::data::</code><code class="descname">record</code><a class="headerlink" href="#_CPPv2N6quotek4data6recordE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record is a container class specially crafted to store asset values data. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek4data6record6recordEv">
+<span id="quotek::data::record::record"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1aab74814792db578ad2ca71361daf4590"></span><code class="descname">record</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data6record6recordEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>record constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data6record6recordElff">
+<span id="quotek::data::record::record__l.float.float"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1ae21890e739031f2fa63eebb055b5b283"></span><code class="descname">record</code><span class="sig-paren">(</span>long <em>timestamp</em>, float <em>value</em>, float <em>spread</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data6record6recordElff" title="Permalink to this definition">¶</a></dt>
+<dd><p>record constructor 2 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data6recordD0Ev">
+<span id="quotek::data::record::~record"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1a90240640eef3dc2629220b249e5d7f78"></span><code class="descname">~record</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data6recordD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>record destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data6record3strEKb">
+<span id="quotek::data::record::str__bC"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1af6125627d4aa67950c9713e76094182a"></span>std::string <code class="descname">str</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>add_timestamps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data6record3strEKb" title="Permalink to this definition">¶</a></dt>
+<dd><p>str takes the data inside the record object and transforms it to a json-formated string. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the content of the record, formatted as a JSON string. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">add_timestamps</span></code> - <p>if true, record timestamp will be added to the string. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek4data6record9to_vectorEKb">
+<span id="quotek::data::record::to_vector__bC"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1a4dc0cb65783d58a3dced5795d102dfb7"></span>Eigen::VectorXd <code class="descname">to_vector</code><span class="sig-paren">(</span><em class="property">const</em> bool <em>add_timestamps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek4data6record9to_vectorEKb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates record to Eigen::VectorXd (dvector) type. 
+Translates record to Eigen VectorXd <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the record translated as Eigen::VectorXd (dvector)</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">add_timestamps</span></code> - <p>tells if timestamps must be added to vector or not. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek4data6record9timestampE">
+<span id="quotek::data::record::timestamp__l"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1a798d0e573f79b6002f44e921e84f8e3d"></span>long <code class="descname">timestamp</code><a class="headerlink" href="#_CPPv2N6quotek4data6record9timestampE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the epoch timestamp at which the asset was worth value. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data6record5valueE">
+<span id="quotek::data::record::value__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1a40472eb3ddb18bce91cbbd6154561014"></span>float <code class="descname">value</code><a class="headerlink" href="#_CPPv2N6quotek4data6record5valueE" title="Permalink to this definition">¶</a></dt>
+<dd><p>the value of the asset at time timestamp. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek4data6record6spreadE">
+<span id="quotek::data::record::spread__float"></span><span class="target" id="quotekclassquotek_1_1data_1_1record_1acade8cee126e2bd59214819f140d4a8a"></span>float <code class="descname">spread</code><a class="headerlink" href="#_CPPv2N6quotek4data6record6spreadE" title="Permalink to this definition">¶</a></dt>
+<dd><p>the spread offered by the broker for the asset at time timestamp. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

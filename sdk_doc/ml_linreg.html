@@ -1,0 +1,326 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linear Regressions</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ml.html">Machine Learning</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Linear Regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_logreg.html">Logistic Regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_utils.html">ML Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="linear-regressions">
+<h1>Linear Regressions<a class="headerlink" href="#linear-regressions" title="Permalink to this headline">¶</a></h1>
+<p>Linear regression is probably one of the simplest form of Machine Learning algorithms out there.
+What it does is to train a linear model based on an existing dataset (usually historical data). Once trained, the model
+can make predictions about future values of the data.</p>
+<div class="figure align-left" id="id1">
+<a class="reference internal image-reference" href="_images/ml_linreg.jpg"><img alt="_images/ml_linreg.jpg" src="_images/ml_linreg.jpg" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Typical Linear regression ( real data = red crosses, model = blue line )</span></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Note: A linear regression can fit way more than affine models, for that you have to add polynomial features to your dataset eg with quotek::ml::polynomial_features(dataset&amp; X, int degree);</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek2ml16linearRegressionE">
+<span id="quotek::ml::linearRegression"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression"></span><em class="property">class </em><code class="descclassname">quotek::ml::</code><code class="descname">linearRegression</code><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegressionE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The linearRegressions class allows to perform linear regression learning algorithms on some datasets. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression16linearRegressionEv">
+<span id="quotek::ml::linearRegression::linearRegression"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a648dd205d9df8f6b9a338b40f739e791"></span><code class="descname">linearRegression</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression16linearRegressionEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class simplest constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression16linearRegressionEb">
+<span id="quotek::ml::linearRegression::linearRegression__b"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1af6c6a14d10762f614e35a6d6ef85ce85"></span><code class="descname">linearRegression</code><span class="sig-paren">(</span>bool <em>regularize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression16linearRegressionEb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor 2 <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">regularize</span></code> - <p>Tells if features must be regularized to avoid overfitting. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegressionD0Ev">
+<span id="quotek::ml::linearRegression::~linearRegression"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a57d264229452d63dac2a6b684c3ec50e"></span><code class="descname">~linearRegression</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegressionD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object Destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression5trainER7dataset">
+<span id="quotek::ml::linearRegression::train__datasetR"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1ab59191b3afcf3ff6b2753783ca19e06e"></span>int <code class="descname">train</code><span class="sig-paren">(</span>dataset &amp;<em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression5trainER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>train takes a dataset and creates a fitting model according to the provided data. Note: it assusmes that the last column of the dataset stores the expected results (y). <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>Dataset to modelize. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression5trainER7datasetR7dvector">
+<span id="quotek::ml::linearRegression::train__datasetR.dvectorR"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a4fc7c5d545336c770d9e24f0cd3fd89d"></span>int <code class="descname">train</code><span class="sig-paren">(</span>dataset &amp;<em>X</em>, dvector &amp;<em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression5trainER7datasetR7dvector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same than regular <a class="reference internal" href="#quotekclassquotek_1_1ml_1_1linear_regression_1ab59191b3afcf3ff6b2753783ca19e06e"><span>train()</span></a> except that it assumes the expected results are in a splitted, m-dimensions vector. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>Dataset to modelize. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">y</span></code> - <p>results vector. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression7predictER7datasetRNSt6vectorIdEE">
+<span id="quotek::ml::linearRegression::predict__datasetR.std::vector:double:R"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a8f2a57625f993b5a07dda2d81f0dcd93"></span>int <code class="descname">predict</code><span class="sig-paren">(</span>dataset &amp;<em>data</em>, std::vector&lt;double&gt; &amp;<em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression7predictER7datasetRNSt6vectorIdEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>predict takes a small dataset and try to guess the output according to the previously learned model. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>Data to predict outputs for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">y</span></code> - <p>Predicted outputs, stored as a vector of floats. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml16linearRegression7predictER7dataset">
+<span id="quotek::ml::linearRegression::predict__datasetR"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a0c3eeafca2f45841a443368af4133c9b"></span>double <code class="descname">predict</code><span class="sig-paren">(</span>dataset &amp;<em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression7predictER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>predict takes a small dataset and try to guess the output according to the previously learned model. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>predicted output, as a float. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>Data to predict output for (array must have 1 single line). </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek2ml16linearRegression10regularizeE">
+<span id="quotek::ml::linearRegression::regularize__b"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1add177140b5aad64d25f3e67e518711a5"></span>bool <code class="descname">regularize</code><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression10regularizeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores wether we will use regularization or not. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek2ml16linearRegression12coefficientsE">
+<span id="quotek::ml::linearRegression::coefficients__VectorXd"></span><span class="target" id="quotekclassquotek_1_1ml_1_1linear_regression_1a8cb6a9c4dc15d36a20a4a0e124a39af2"></span>VectorXd <code class="descname">coefficients</code><a class="headerlink" href="#_CPPv2N6quotek2ml16linearRegression12coefficientsE" title="Permalink to this definition">¶</a></dt>
+<dd><p>stores the coefficients for each dimension of the dataset. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/linearregression.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//We declare a dataset X, and expected results y.</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">dataset</span> <span class="n">X</span><span class="p">;</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">dvector</span> <span class="n">y</span><span class="p">;</span>
+
+  <span class="n">X</span> <span class="o">=</span>  <span class="n">MatrixXd</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+  <span class="n">y</span> <span class="o">=</span>  <span class="n">VectorXd</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+  <span class="c1">//We fill both dataset and expected results with our data.</span>
+  <span class="n">X</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">;</span>
+  <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">20</span><span class="p">;</span>
+
+  <span class="c1">//We train our Linear regression with our data.</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">linearRegression</span> <span class="n">l1</span><span class="p">;</span>
+  <span class="n">l1</span><span class="p">.</span><span class="n">train</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+  <span class="c1">//Then we can make predictions with our trained linear regression object.</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">dataset</span> <span class="n">Xpred</span> <span class="o">=</span> <span class="n">MatrixXd</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="n">Xpred</span> <span class="o">&lt;&lt;</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">l1</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xpred</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

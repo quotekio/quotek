@@ -1,0 +1,326 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>The Strategy Class</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Quick Start</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firstcode.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="further.html">Going Further</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">The Strategy Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="the-strategy-class">
+<h1>The Strategy Class<a class="headerlink" href="#the-strategy-class" title="Permalink to this headline">¶</a></h1>
+<p>In Quotek, the strategy class can be seen as a framework, a backbone on which you can build your trading algorithm. The strategy class mainly consists of a set of virtual members, which need to be reimplemented by the user to effectively create an algotrading system.</p>
+<div class="section" id="how-to-use-it">
+<h2>How to use it ?<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h2>
+<p>As you will see, the two main steps for using the strategy class in your own algos,
+are first to reimpement the needed virtual classes, and second to interface the strategy class with the real world (market datastream, brokerage, etc..).</p>
+</div>
+<div class="section" id="important-class-methods">
+<h2>Important Class methods<a class="headerlink" href="#important-class-methods" title="Permalink to this headline">¶</a></h2>
+<p>In order to perform the two steps we described erlier, you have to know which are the most important attributes of the strategy class. These are the following:</p>
+<div class="section" id="int-initialize">
+<h3>int initialize()<a class="headerlink" href="#int-initialize" title="Permalink to this headline">¶</a></h3>
+<p>This method is for initializing your algorithm. Every component of your algorithm that needs to be initialized once at the beginning, can
+be so in this function.</p>
+</div>
+<div class="section" id="void-evaluate">
+<h3>void evaluate()<a class="headerlink" href="#void-evaluate" title="Permalink to this headline">¶</a></h3>
+<p>Probaly the most important method of all, this is where your main algorithm logics must go. The goal of evaluate() is to be called many times ( up to 1 time per price move, if you want ), so that you can take one or more dicisions according to the prices
+evolution.</p>
+</div>
+<div class="section" id="order-string-order">
+<h3>order(string order)<a class="headerlink" href="#order-string-order" title="Permalink to this headline">¶</a></h3>
+<p>The strategy class has its own thread-safe FIFO queue, to store and process the buy/sell orders that will be passed to your borker afterwards. What orders() does is that it simply pushes the order string passed as argument inside the FIFO, that&#8217;s it.</p>
+</div>
+<div class="section" id="void-set-env">
+<h3>void set_env()<a class="headerlink" href="#void-set-env" title="Permalink to this headline">¶</a></h3>
+<p>Also important, the purpose of this function is to interface the strategy class with the external world ( prices streams, brokers, etc.. )
+it takes 4 elements as arugments but for this introduction only one is important: records <a href="#id1"><span class="problematic" id="id2">*</span></a>recs (The others can be set to NULL).</p>
+</div>
+</div>
+<div class="section" id="important-class-variables">
+<h2>Important Class variables<a class="headerlink" href="#important-class-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="t">
+<h3>t<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
+<p>strategy.t is stores the epoch timestamp at which the algo is running . If the algo is live, then strategy.t might be equal to time(0)</p>
+</div>
+<div class="section" id="value">
+<h3>value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
+<p>strategy.value stores the price at time t of the asset you are working with in your algo.</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Now let&#8217;s talk about an effective implementation. As explained, the first step is
+to declare a new class inheriting from the strategy class.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/strategy.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="c1">//Here, we declare a new class inheriting from strategy</span>
+<span class="k">class</span> <span class="nc">mystrat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">strategy</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>Next, the goal will be to override the two main members of the class: initialize() and evaluate(). evaluate will contain your effetive algorithm.</p>
+<div class="highlight-c++"><div class="highlight"><pre>  <span class="k">public</span><span class="o">:</span>
+
+    <span class="c1">//We have nothing to init, so we keep it empty.</span>
+    <span class="kt">int</span> <span class="n">initialize</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">//We created a very trivial evaluation:</span>
+    <span class="c1">//If the AAPL stock price reaches $115, then buy 10 stocks.</span>
+    <span class="kt">void</span> <span class="n">evaluate</span><span class="p">()</span> <span class="p">{</span>
+
+      <span class="k">if</span> <span class="p">(</span> <span class="n">value</span>  <span class="o">&gt;=</span> <span class="mf">115.0</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">order</span><span class="p">(</span><span class="s">&quot;buy AAPL 10&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Now that we have our inherited class that is implemented, we will want to interface it with the data and run it.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//This variable will store the current price of the asset we work with.</span>
+  <span class="kt">float</span> <span class="n">fetched_value</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">order</span><span class="p">;</span>
+
+  <span class="c1">//We create a new instance of our custom class.</span>
+  <span class="n">mystrat</span> <span class="n">s1</span><span class="p">;</span>
+
+  <span class="c1">//We create a records container in order to store the price data.</span>
+  <span class="n">records</span> <span class="o">*</span><span class="n">recs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">records</span><span class="p">();</span>
+
+  <span class="c1">//We interface our records container with the strategy.</span>
+  <span class="n">s1</span><span class="p">.</span><span class="n">set_env</span><span class="p">(</span><span class="n">recs</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+  <span class="c1">//We call the initialize member</span>
+  <span class="n">s1</span><span class="p">.</span><span class="n">initialize</span><span class="p">();</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//Place your market datastream fetching code here (data must be stored inside the fetched_value float variable)</span>
+
+    <span class="n">s1</span><span class="p">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">s1</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">fetched_value</span><span class="p">;</span>
+    <span class="n">record</span> <span class="n">r</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">t</span><span class="p">,</span> <span class="n">fetched_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">recs</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+
+    <span class="c1">//We call the price evaluation method.</span>
+    <span class="n">s1</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span> <span class="n">s1</span><span class="p">.</span><span class="n">orders_queue</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="p">{</span>
+
+      <span class="c1">//place your broker orders passing code here</span>
+
+    <span class="p">}</span>
+
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-code">
+<h2>Full Code<a class="headerlink" href="#full-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/strategy.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">mystrat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">strategy</span> <span class="p">{</span>
+
+  <span class="k">public</span><span class="o">:</span>
+
+    <span class="kt">int</span> <span class="n">initialize</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">evaluate</span><span class="p">()</span> <span class="p">{</span>
+
+      <span class="k">if</span> <span class="p">(</span> <span class="n">value</span>  <span class="o">&gt;=</span> <span class="mf">115.0</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">order</span><span class="p">(</span><span class="s">&quot;buy AAPL 10&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kt">float</span> <span class="n">fetched_value</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">order</span><span class="p">;</span>
+  <span class="n">mystrat</span> <span class="n">s1</span><span class="p">;</span>
+  <span class="n">records</span> <span class="o">*</span><span class="n">recs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">records</span><span class="p">();</span>
+
+  <span class="n">s1</span><span class="p">.</span><span class="n">set_env</span><span class="p">(</span><span class="n">recs</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">s1</span><span class="p">.</span><span class="n">initialize</span><span class="p">();</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//Place your market datastream fetching code here (data must be stored inside the fetched_value float variable)</span>
+
+    <span class="n">s1</span><span class="p">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">s1</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">fetched_value</span><span class="p">;</span>
+    <span class="n">record</span> <span class="n">r</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">t</span><span class="p">,</span> <span class="n">fetched_value</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">recs</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+
+    <span class="n">s1</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span> <span class="n">s1</span><span class="p">.</span><span class="n">orders_queue</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span> <span class="p">{</span>
+
+       <span class="c1">//place your broker orders passing code here</span>
+
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

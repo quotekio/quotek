@@ -1,0 +1,271 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>SDK Examples</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">SDK Examples</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="sdk-examples">
+<h1>SDK Examples<a class="headerlink" href="#sdk-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<p><em>The strategies provided here are for educating purposes ONLY, and MUST NOT be used as
+real investment strategies. Therefore, Quotek SAS declines all responsability for
+potential loss or missed investment opportunities resulting of the misuse of these
+algorithms in real situations.</em></p>
+</div>
+<div class="section" id="stock-market-sentiment-analysis-with-alchemy-api">
+<h2>Stock market sentiment analysis with Alchemy API<a class="headerlink" href="#stock-market-sentiment-analysis-with-alchemy-api" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will use the Alchemy API service to evaluate the overall sentiment of the US equity market using the content provided by the Wall-Street Journal RSS feed.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/alchemy.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/rss.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">pos_sent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">neg_sent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="cm">/* we declare a new AlchemyAPI client object.</span>
+<span class="cm">   * Here we must provide the Alchemy API-key and API endpoint.</span>
+<span class="cm">   */</span>
+
+  <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">alchemy</span> <span class="n">a1</span><span class="p">(</span><span class="s">&quot;DKJSKSJD-OIEEOIDJS-LQKSLQSKQLS&quot;</span><span class="p">,</span><span class="s">&quot;http://access.alchemyapi.com&quot;</span><span class="p">);</span>
+
+  <span class="cm">/* we declare a new RSS data source, with the WSJ rss feed url as argument */</span>
+
+  <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="o">::</span><span class="n">rss</span> <span class="n">s1</span><span class="p">(</span><span class="s">&quot;http://www.wsj.com/xml/rss/3_7031.xml&quot;</span><span class="p">);</span>
+
+  <span class="cm">/* we fetch the last WSJ market news in the feed */</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">news</span><span class="o">&gt;</span> <span class="n">wsj_nlist</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">fetch</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span> <span class="n">wsj_nlist</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="cm">/* we send each news to the Alchemy API service for sentiment analysis. */</span>
+    <span class="n">quotek</span><span class="o">::</span><span class="n">ml</span><span class="o">::</span><span class="n">sentiment</span> <span class="n">sent</span> <span class="o">=</span> <span class="n">a1</span><span class="p">.</span><span class="n">sentiment</span><span class="p">(</span> <span class="n">wsj_nlist</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">content</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;text&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">sent</span><span class="p">.</span><span class="n">sentimentstr</span> <span class="o">==</span> <span class="s">&quot;positive&quot;</span><span class="p">)</span> <span class="n">pos_sent</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sent</span><span class="p">.</span><span class="n">sentimentstr</span> <span class="o">==</span> <span class="s">&quot;negative&quot;</span><span class="p">)</span> <span class="n">neg_sent</span><span class="o">++</span><span class="p">;</span>
+
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">pos_sent</span> <span class="o">&gt;</span> <span class="n">neg_sent</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;sentiment on US markets is positive overall&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+   <span class="cm">/* .. take decision here */</span>
+  <span class="p">}</span>
+
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;sentiment on US markets is negative overall&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="cm">/* .. take another decision here */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moving-averages-evolution-on-multiple-time-scales">
+<h2>Moving Averages evolution on multiple time scales<a class="headerlink" href="#moving-averages-evolution-on-multiple-time-scales" title="Permalink to this headline">¶</a></h2>
+<p>For this example we will try to deduce buy and sell signals for an asset by using 2 SMA20 moving averages on 50seconds and 15minutes time scales.</p>
+<div class="section" id="predicates">
+<h3>Predicates<a class="headerlink" href="#predicates" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>If the 2 moving averages go up at the same time, then we might have a buy signal.</li>
+<li>On the other side if they both go down at the same time we may have a sell signal.</li>
+<li>If the 2 moving average don&#8217;t go the same way, then we have no signal at all.</li>
+</ul>
+</div></blockquote>
+<p>Also in order see some things, we will simulate a full day of dow-jones quotation by using a random, normally distributed sample (17000, sigma of 100).</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/record.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/generators.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/quant.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">quant</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">rand</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">records</span> <span class="n">current</span><span class="p">;</span>
+
+  <span class="cm">/* we generate a full day of fake Dow-Jones quotations, which represents about 25000 ticks of 1 second */</span>
+  <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">records</span> <span class="n">dquotes</span> <span class="o">=</span> <span class="n">generators</span><span class="o">::</span><span class="n">normal</span><span class="p">(</span><span class="mi">25000</span><span class="p">,</span> <span class="mi">17000</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+  <span class="cm">/* Next we&#39;ll simulate the running of the quotation day */</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span> <span class="n">dquotes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">current</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">dquotes</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="cm">/* We compute the 2 moving average every 10 ticks */</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span>  <span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">//we down-sample current for 15-minute ticks</span>
+      <span class="n">records</span> <span class="n">current_ds1</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">down_sample</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;typical&quot;</span><span class="p">);</span>
+
+      <span class="c1">//we down-sample current for 50secs ticks.</span>
+      <span class="n">records</span> <span class="n">current_ds2</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">down_sample</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;typical&quot;</span><span class="p">);</span>
+
+      <span class="c1">//we compute 20 periods SMA for 15 minutes sample</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">SMA</span><span class="p">(</span><span class="n">current_ds1</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+      <span class="n">records</span> <span class="n">avg1</span> <span class="o">=</span> <span class="n">records</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+
+      <span class="c1">//we compute 20 periods SMA for 50 seconds sample</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">SMA</span><span class="p">(</span><span class="n">current_ds2</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+      <span class="n">records</span> <span class="n">avg2</span> <span class="o">=</span> <span class="n">records</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span>  <span class="n">percent_delta</span><span class="p">(</span><span class="n">avg1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">percent_delta</span><span class="p">(</span><span class="n">avg2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;We got a BUY Signal at &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">dquotes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="c1">// .. We get a potential buy signal, do something..</span>
+      <span class="p">}</span>
+
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">percent_delta</span><span class="p">(</span><span class="n">avg1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">percent_delta</span><span class="p">(</span><span class="n">avg2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;We got a SELL Signal at &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">dquotes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="c1">// .. We get a potential sell signal at, do something..</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

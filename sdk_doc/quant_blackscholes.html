@@ -1,0 +1,264 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Options pricing</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="quant.html">Quant Functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quant_tsa.html">Time Series Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Options pricing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quant_generators.html">Generators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="options-pricing">
+<h1>Options pricing<a class="headerlink" href="#options-pricing" title="Permalink to this headline">¶</a></h1>
+<p>Quotek SDK embedds some options pricing functionalities. This is accomplished mostly through the Black &amp; Scholes
+model, which can be used by instanciating a new quotek::quant::blackscholes object.</p>
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant6optionE">
+<span id="quotek::quant::option"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option"></span><em class="property">class </em><code class="descclassname">quotek::quant::</code><code class="descname">option</code><a class="headerlink" href="#_CPPv2N6quotek5quant6optionE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option is a class meant to modelize the behaviour of options, for instance in the context of black-sholes modeling. Please Note that this class is good for vanilla options only, if you need something more exotic the best way to do is to create a new class which will inherit from it. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant6option6optionEv">
+<span id="quotek::quant::option::option"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1a3e49560451e4eb3920c830e07aaf2a3b"></span><code class="descname">option</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant6option6optionEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option first constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant6option6optionEiNSt6stringEfff">
+<span id="quotek::quant::option::option__i.ss.float.float.float"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1af065b1ec8e571e4b97f91b6e50992ee7"></span><code class="descname">option</code><span class="sig-paren">(</span>int <em>type</em>, std::string <em>underlying</em>, float <em>price</em>, float <em>strike</em>, float <em>expires</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant6option6optionEiNSt6stringEfff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option second constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant6optionD0Ev">
+<span id="quotek::quant::option::~option"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1ac0679db139d2400e5f1bd7c8967219b7"></span><code class="descname">~option</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant6optionD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>option destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant6option11is_in_moneyEv">
+<span id="quotek::quant::option::is_in_money"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1a8ebaa2bcdc41ce5aadecf23ded6b8a68"></span>bool <code class="descname">is_in_money</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant6option11is_in_moneyEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns wether the option is IN or OUT of the money </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6option10underlyingE">
+<span id="quotek::quant::option::underlying__ss"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1a54fba463a41fe4db78cc4cb88aa33d3b"></span>std::string <code class="descname">underlying</code><a class="headerlink" href="#_CPPv2N6quotek5quant6option10underlyingE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Underlying contains the asset_id of the option&#8217;s underlying </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6option7expiresE">
+<span id="quotek::quant::option::expires__float"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1aced92baa5f5af6c487d8155eea85877f"></span>float <code class="descname">expires</code><a class="headerlink" href="#_CPPv2N6quotek5quant6option7expiresE" title="Permalink to this definition">¶</a></dt>
+<dd><p>gives the option expiration, in years </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6option5priceE">
+<span id="quotek::quant::option::price__float"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1a9b1230c4e5199569b4eb406022168ba0"></span>float <code class="descname">price</code><a class="headerlink" href="#_CPPv2N6quotek5quant6option5priceE" title="Permalink to this definition">¶</a></dt>
+<dd><p>price stores the current price of the modelized option </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6option6strikeE">
+<span id="quotek::quant::option::strike__float"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1ae487f979e2065fdc089a616a5ae9143c"></span>float <code class="descname">strike</code><a class="headerlink" href="#_CPPv2N6quotek5quant6option6strikeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>gives the option&#8217;s strike </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N6quotek5quant6option4typeE">
+<span id="quotek::quant::option::type__i"></span><span class="target" id="quotekclassquotek_1_1quant_1_1option_1ad4d1e58174abc78ea093fc41cb8d0f8c"></span>int <code class="descname">type</code><a class="headerlink" href="#_CPPv2N6quotek5quant6option4typeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>tells wether the option is a put or a call </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv2N6quotek5quant12blackscholesE">
+<span id="quotek::quant::blackscholes"></span><span class="target" id="quotekclassquotek_1_1quant_1_1blackscholes"></span><em class="property">class </em><code class="descclassname">quotek::quant::</code><code class="descname">blackscholes</code><a class="headerlink" href="#_CPPv2N6quotek5quant12blackscholesE" title="Permalink to this definition">¶</a></dt>
+<dd><p>blackscholes provides an option pricing modelisation context. Please note that this class only support vanilla options pricing by default, and if you want to price exotics contracts with this class you&#8217;ll probably have to inherit it. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant12blackscholes12blackscholesER6optionfff">
+<span id="quotek::quant::blackscholes::blackscholes__optionR.float.float.float"></span><span class="target" id="quotekclassquotek_1_1quant_1_1blackscholes_1ab95e05f7462237ab991669136c696bad"></span><code class="descname">blackscholes</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N6quotek5quant6optionE" title="quotek::quant::option">option</a> &amp;<em>modelized_option</em>, float <em>underlying_price</em>, float <em>safe_interest_rate</em>, float <em>implied_volatility</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant12blackscholes12blackscholesER6optionfff" title="Permalink to this definition">¶</a></dt>
+<dd><p>black-sholes model object constructor. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">modelized_option</span></code> - <p>Option object to modelize within Black &amp; Sholes context. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">underlying_price</span></code> - <p>current price of the underlying asset for modelized option. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">safe_interest_rate</span></code> - <p>interest safe rate to use for option price calculation. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">implied_volatility</span></code> - <p>implied price volatility of the underlying asset for modelized option. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant12blackscholesD0Ev">
+<span id="quotek::quant::blackscholes::~blackscholes"></span><span class="target" id="quotekclassquotek_1_1quant_1_1blackscholes_1a7a1d0c86ddc44fc9578106f927e099ee"></span><code class="descname">~blackscholes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant12blackscholesD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>blackscholes object destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek5quant12blackscholes14compute_greeksEv">
+<span id="quotek::quant::blackscholes::compute_greeks"></span><span class="target" id="quotekclassquotek_1_1quant_1_1blackscholes_1a1afd8dfe5304240dcdc1bdd542f4bbdf"></span><a class="reference internal" href="quant_tsa.html#_CPPv2N6quotek5quant7_greeksE" title="quotek::quant::_greeks">_greeks</a> <code class="descname">compute_greeks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek5quant12blackscholes14compute_greeksEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute greeks. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a greeks_ structure containing beta, gamme, delta.. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

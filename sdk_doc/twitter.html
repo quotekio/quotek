@@ -1,0 +1,284 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>Twitter</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="data_sources.html">Data Sources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quandl.html">Quandl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etoro.html">eToro</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo.html">Yahoo! Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rss.html">RSS Feeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="twitter">
+<h1>Twitter<a class="headerlink" href="#twitter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv2N6quotek10datasource7twitterE">
+<span id="quotek::datasource::twitter"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter"></span><em class="property">class </em><code class="descclassname">quotek::datasource::</code><code class="descname">twitter</code><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitterE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Twitter is a class that allows to fetch twitter content from the regular API. </p>
+<p>Inherits from quotek::datasource::datasource</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource7twitter7twitterENSt6stringENSt6stringENSt6stringENSt6stringE">
+<span id="quotek::datasource::twitter::twitter__ss.ss.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter_1aaa77f7b931af53090606c841fec6fc9f"></span><code class="descname">twitter</code><span class="sig-paren">(</span>std::string <em>consumer_key</em>, std::string <em>consumer_secret</em>, std::string <em>token</em>, std::string <em>token_secret</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitter7twitterENSt6stringENSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>twitter class constructor. To get all the constructor parameters, just go to <a class="reference external" href="https://apps.twitter.com/,">https://apps.twitter.com/,</a> create a new app and go to &#8220;Keys and Access Tokens&#8221;.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">consumer_key</span></code> - <p>Twitter app consumer key. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">consumer_secret</span></code> - <p>Twitter app consumer secret. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">token</span></code> - <p>Twitter app token. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">token_secret</span></code> - <p>Twitter app token secret. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource7twitterD0Ev">
+<span id="quotek::datasource::twitter::~twitter"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter_1a962ba61d5f83284bc585c9a65562ef90"></span><code class="descname">~twitter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitterD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd><p>twitter class destructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource7twitter5fetchENSt6stringEi">
+<span id="quotek::datasource::twitter::fetch__ss.i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter_1a5fd804bf9268d17db8b7c0b2071ececb"></span>std::vector&lt;quotek::data::<a class="reference internal" href="news.html#_CPPv2N6quotek4data4newsE" title="quotek::data::news">news</a>&gt; <code class="descname">fetch</code><span class="sig-paren">(</span>std::string <em>screen_name</em>, int <em>nb_tweets</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitter5fetchENSt6stringEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>fetches the last tweets of given user.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of quotek news objects. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">screen_name</span></code> - <p>The name of account to fetch tweets for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">nb_tweets</span></code> - <p>The number of tweets to fetch (sorted by descending date) </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource7twitter6searchENSt6stringEi">
+<span id="quotek::datasource::twitter::search__ss.i"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter_1a9ce1541023f5eba10d3cdd80e5df90b4"></span>std::vector&lt;quotek::data::<a class="reference internal" href="news.html#_CPPv2N6quotek4data4newsE" title="quotek::data::news">news</a>&gt; <code class="descname">search</code><span class="sig-paren">(</span>std::string <em>term</em>, int <em>nb_tweets</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitter6searchENSt6stringEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>searches the tweets matching the term provided as argument.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of quotek news objects matching the search. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">term</span></code> - <p>term to search in the global tweets feed. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">nb_tweets</span></code> - <p>The number of found tweets to retrieve. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek10datasource7twitter6searchENSt6stringEiNSt6stringENSt6stringE">
+<span id="quotek::datasource::twitter::search__ss.i.ss.ss"></span><span class="target" id="quotekclassquotek_1_1datasource_1_1twitter_1a90b28ee03df453ef5040fdef952ebbc7"></span>std::vector&lt;quotek::data::<a class="reference internal" href="news.html#_CPPv2N6quotek4data4newsE" title="quotek::data::news">news</a>&gt; <code class="descname">search</code><span class="sig-paren">(</span>std::string <em>term</em>, int <em>nb_tweets</em>, std::string <em>result_type</em>, std::string <em>lang</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek10datasource7twitter6searchENSt6stringEiNSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>searches the tweets matching the term provided as argument. This method refines the usual <a class="reference internal" href="#quotekclassquotek_1_1datasource_1_1twitter_1a9ce1541023f5eba10d3cdd80e5df90b4"><span>search()</span></a> method by adding 2 extra parameters: result_type and language. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a vector of quotek news objects matching the search. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">term</span></code> - <p>term to search in the global tweets feed. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">nb_tweets</span></code> - <p>The number of found tweets to retrieve. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">result_type</span></code> - <p>Type of the search result, can be either &#8220;popular&#8221;, &#8220;recent&#8221; or &#8220;mixed&#8221;. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">language</span></code> - <p>of the tweets, eg for english only tweets put lang = &#8220;en&#8221;. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>You will find below a sample source code about how to use the Quotek Twitter client to fetch
+the 40 most recent tweets containing the word &#8220;DOWJONES&#8221;. <a href="#id1"><span class="problematic" id="id2">*</span></a>/</p>
+<blockquote>
+<div><div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;quotek/quotek.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;quotek/datasources/twitter.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">datasource</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">quotek</span><span class="o">::</span><span class="n">data</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">//We declare a new Twitter client.</span>
+  <span class="n">twitter</span> <span class="n">tw1</span><span class="p">(</span><span class="s">&quot;TWITTER-CONSUMER-KEY&quot;</span><span class="p">,</span>
+              <span class="s">&quot;TWITTER-CONSUMER-SECRET&quot;</span><span class="p">,</span>
+              <span class="s">&quot;TWITTER-TOKEN&quot;</span><span class="p">,</span>
+              <span class="s">&quot;TWITTER-TOKEN-SECRET&quot;</span><span class="p">);</span>
+
+  <span class="c1">//we fetch the 40 most recent tweets matching &quot;DOWJONES&quot;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">news</span><span class="o">&gt;</span> <span class="n">nvect</span> <span class="o">=</span> <span class="n">tw1</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;DOWJONES&quot;</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="s">&quot;recent&quot;</span><span class="p">,</span><span class="s">&quot;en&quot;</span><span class="p">);</span>
+
+  <span class="c1">//Then we iterate through them to display their content on stdout.</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nvect</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nvect</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">content</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+

@@ -1,0 +1,296 @@
+<head>
+  <meta charset="utf-8">
+  
+  <title>ML Utils</title>
+  
+  <link href='_static/css/bootstrap.css' rel='stylesheet' type='text/css'>
+  <link href='_static/css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
+
+  
+      <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+  
+
+  
+
+  <link href='_static/css/quotek.css' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="_static/js/jquery.js"></script>
+
+  <script type="text/javascript" src="_static/js/bootstrap.min.js">
+  </script>
+
+</head>
+<!-- <body style="background:#333333;color:white;"> -->
+<body>
+
+    <div class="header-common">
+            <div class="container-fluid">
+              <div class="col-md-4">
+                <a href="#"><img alt="" id="header-logo" src="_static/img/quotek-logo.png"></a>
+              </div>
+            </div>
+    </div>
+
+<!--
+<div class="doc-nav">
+
+    <div class="container">
+
+    <ul class="nav nav-pills">
+      <li role="presentation" class="disabled"><a href="#">SaaS</a></li>
+      <li role="presentation" class="active"><a href="/sdk">SDK</a></li>
+      <li role="presentation"><a href="/faq">FAQ</a></li>
+    </ul>
+
+  </div>
+
+  </div>
+-->
+
+  <div class="content-3"></div>
+
+
+  <div class="container" style="margin-top:-80px">
+ 
+
+    <div class="col-md-3" style="margin-top:80px">
+      <div id="doc-leftmenu">
+
+        
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struct.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quant.html">Quant Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta.html">Technical Analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ml.html">Machine Learning</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ml_linreg.html">Linear Regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_logreg.html">Logistic Regressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ML Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broker.html">Broker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extras.html">Extras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">SDK Examples</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="rst-content">
+        
+  <div class="section" id="ml-utils">
+<h1>ML Utils<a class="headerlink" href="#ml-utils" title="Permalink to this headline">¶</a></h1>
+<p>The Following page lists all the extra functions that can be useful when performing Machine Learning algorithms.</p>
+<div class="section" id="features-engineering">
+<h2>Features Engineering<a class="headerlink" href="#features-engineering" title="Permalink to this headline">¶</a></h2>
+<p>The following utility functions concern all about ML features engineering: normalization, adding of polynomial features..</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml9normalizeER7dataset">
+<span id="quotek::ml::normalize__datasetR"></span><span class="target" id="quoteknamespacequotek_1_1ml_1af8ee4417030b35598b32007201a0ee80"></span>dataset &amp;<code class="descclassname">quotek::ml::</code><code class="descname">normalize</code><span class="sig-paren">(</span>dataset &amp;<em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml9normalizeER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>normalize takes a data sample and performs 0-mean and unit variance transformations on it. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to transformed dataset (X) </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>dataset to normalize. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml8add_biasER7dataset">
+<span id="quotek::ml::add_bias__datasetR"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a9df3e302e994f25139c7ae360f61ea5c"></span>dataset &amp;<code class="descclassname">quotek::ml::</code><code class="descname">add_bias</code><span class="sig-paren">(</span>dataset &amp;<em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml8add_biasER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a bias column composed of ones to the dataset. * <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the modified dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>dataset to add ones for. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml3pcaER7dataseti">
+<span id="quotek::ml::pca__datasetR.i"></span><span class="target" id="quoteknamespacequotek_1_1ml_1abb486a27a6830c349ba56879df0030d5"></span>dataset <code class="descclassname">quotek::ml::</code><code class="descname">pca</code><span class="sig-paren">(</span>dataset &amp;<em>X</em>, int <em>feats</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml3pcaER7dataseti" title="Permalink to this definition">¶</a></dt>
+<dd><p>pca performs Principal Component Analysis on a given n-dimensions dataset. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>PCA-reduced dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>dataset to perform PCA on. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">feats</span></code> - <p>Number of features to keep after PCA reduction. Note: feats must be between 1 and columns(X) - 1 </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml6kmeansER7dataseti">
+<span id="quotek::ml::kmeans__datasetR.i"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a2fbf188ef78cd01b677da00dee6b01d3"></span>dvector <code class="descclassname">quotek::ml::</code><code class="descname">kmeans</code><span class="sig-paren">(</span>dataset &amp;<em>X</em>, int <em>nb_clusters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml6kmeansER7dataseti" title="Permalink to this definition">¶</a></dt>
+<dd><p>kmeans performs a K-means clustering algorithm on a given dataset to in order to labelize its samples. This algorithm works very nicelly when you don&#8217;t have pre-labelled data and don&#8217;t want to labelize them manually. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>lebels vector for each row of the dataset. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>dataset to labelize </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">nb_clusters</span></code> - <p>integer which defines the number of categories wanted for clustering. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml19polynomial_featuresER7dataseti">
+<span id="quotek::ml::polynomial_features__datasetR.i"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a48935150888ed541891ebfbaef6ed378"></span>dataset <code class="descclassname">quotek::ml::</code><code class="descname">polynomial_features</code><span class="sig-paren">(</span>dataset &amp;<em>X</em>, int <em>degree</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml19polynomial_featuresER7dataseti" title="Permalink to this definition">¶</a></dt>
+<dd><p>polynomial_features is a function that takes a dataset to increase its number of dimensions with polynomial elements: for instance [a,b] features become at degree 2: [1, a, b, ab, a^2, b^2 ]. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>dimentionality improved dataset </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">X</span></code> - <p>dataset create poly features for. </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">degree</span></code> - <p>Number of dimensions to add. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="non-linearity">
+<h2>Non-Linearity<a class="headerlink" href="#non-linearity" title="Permalink to this headline">¶</a></h2>
+<p>The following section gathers all the non-linear transfert functions: Sigmoid, Tanh, ReLU..</p>
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml10nl_sigmoidEd">
+<span id="quotek::ml::nl_sigmoid__double"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a7f93841bd0aa560f956ef329a243e743"></span>double <code class="descclassname">quotek::ml::</code><code class="descname">nl_sigmoid</code><span class="sig-paren">(</span>double <em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml10nl_sigmoidEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>computes the sigmoid function of a single double value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the sigmoid value for input. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">input</span></code> - <p>input to compute sigmoid for. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml10nl_sigmoidER7dataset">
+<span id="quotek::ml::nl_sigmoid__datasetR"></span><span class="target" id="quoteknamespacequotek_1_1ml_1afb81c41ad052af665a94c830cd0a10fd"></span>dataset <code class="descclassname">quotek::ml::</code><code class="descname">nl_sigmoid</code><span class="sig-paren">(</span>dataset &amp;<em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml10nl_sigmoidER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>vectorized version of nl_sigmoid. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml7nl_tanhER7dataset">
+<span id="quotek::ml::nl_tanh__datasetR"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a38810261f2a0fc74de71f6ad631dcc9d"></span>dataset <code class="descclassname">quotek::ml::</code><code class="descname">nl_tanh</code><span class="sig-paren">(</span>dataset &amp;<em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml7nl_tanhER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>vectorized implementation of tanh. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml12nl_rectifierEd">
+<span id="quotek::ml::nl_rectifier__double"></span><span class="target" id="quoteknamespacequotek_1_1ml_1ab742e7d202ed62f0b8112bd7088fb0ee"></span>double <code class="descclassname">quotek::ml::</code><code class="descname">nl_rectifier</code><span class="sig-paren">(</span>double <em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml12nl_rectifierEd" title="Permalink to this definition">¶</a></dt>
+<dd><p>nl_rectifier, or Rectified Linear Unit, computes max(0,input) for a single value. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the rectified value for input. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">input</span></code> - <p>input to rectify. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N6quotek2ml12nl_rectifierER7dataset">
+<span id="quotek::ml::nl_rectifier__datasetR"></span><span class="target" id="quoteknamespacequotek_1_1ml_1a7cbb7fb7b9cc881efa0e17d1e3a273f5"></span>dataset <code class="descclassname">quotek::ml::</code><code class="descname">nl_rectifier</code><span class="sig-paren">(</span>dataset &amp;<em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6quotek2ml12nl_rectifierER7dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>vectorized version of nl_rectifier. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+
+    $.each( $('.breathe-sectiondef'), function(index,v) {
+
+      if ( $(this).hasClass('container') ) $(this).removeClass('container');
+
+     } );
+
+    $("#header-pbtn").click(function() { product_dropdown_toggle(); });
+
+    function product_dropdown_toggle() {
+
+      $('#product-dropdown').css({ left: $('#header-pbtn').position().left + 20 + 'px'  });
+
+      if ( $('#product-dropdown').width() == 0 ) {
+
+
+        $('#product-dropdown').animate({ width:"140px", duration: 1000})
+        .after(function() { $('#product-dropdown-ct').show(); } );
+
+      }
+
+      else {
+        
+        $('#product-dropdown').animate({width:"0px",duration: 1000})
+        .after( function() { $('#product-dropdown-ct').hide(); } );   
+      }
+    }
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+<div class="footer-top">
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row-fluid">
+
+      <div class="col-md-6">
+        <a href="#"><img style="height:20px;opacity:.7" src="_static/img/quotek-logo-ws.png"/></a>
+      </div>
+      <div class="col-md-6" style="text-align:center"></div>
+    </div>
+  </div>
+
