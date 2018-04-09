@@ -32,7 +32,10 @@ git clone https://github.com/quotekio/quotek
 cd quotek
 ./build.sh all
 ```
-That's all..The full install process takes from 10 to 30mins depending on the performance of the server.
+
+At some point the installer will ask you to provide your server's hostname. This is absolutely necessary, so if you don't have one just use the reverse dns of the server's ip or create an entry in your hosts file.
+
+That will be all for now..The full install process takes from 10 to 15mins.
 
 How to Configure
 -----------------
