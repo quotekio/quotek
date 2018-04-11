@@ -1,7 +1,7 @@
 Quotek is a free Algotrading software, created to handle every aspects of such activity. 
 
 
-[![Quotek Video Intro](https://drive.google.com/open?id=166CVEZq18_9FMRuwCa8Y4LkT1T8bl1ot)](https://youtu.be/2rNISXucOZg)
+[![Quotek Video Intro](https://drive.google.com/uc?id=166CVEZq18_9FMRuwCa8Y4LkT1T8bl1ot)](https://youtu.be/2rNISXucOZg)
 
 
 
