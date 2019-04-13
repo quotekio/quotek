@@ -13,7 +13,7 @@ Main Features
        * An online code editor.
        * An online backtester.
        * GIT versionning.
-  * Can Run concurrent strategies in realtime (multimodel).
+  * Can run multiple strategies concurrently & in realtime (stacking).
   * Display of market charts in realtime (visualize module).
 
 
